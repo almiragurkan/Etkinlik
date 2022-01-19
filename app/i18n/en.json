@@ -8,6 +8,10 @@
     "invalidEmail": "Invalid email address."
   },
   "welcomeScreen": {
+    "etkinlik": "ETKİNLİKLER",
+    "place": "Yer",
+    "related": "İlgi Alanı",
+    "type": "Tür",
     "poweredBy": "POWERED BY IGNITE",
     "readyForLaunch": "Ready for launch.",
     "continue": "CONTINUE"

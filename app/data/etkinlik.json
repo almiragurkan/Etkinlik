@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "total_count": 70
+  },
+  "items": [
+    {
+      "id": 24988,
+      "name": "Amatör Ekmekçilik",
+      "slug": "amator-ekmekcilik",
+      "url": "https://etkinlik.io/etkinlik/24988/amator-ekmekcilik",
+      "content": "<p>Etkinlik içeriği html formatındadır.</p>",
+      "start": "2016-02-08T18:30:00+0200",
+      "end": "2016-02-08T20:30:00+0200",
+      "is_free": false,
+      "phone": "+90 212 212 2122",
+      "email": "deneme@deneme.com",
+      "facebook_url": "Etkinlikio-1565101957082313",
+      "twitter_url": "etkinlikio",
+      "hashtag": "PHPCONF2016",
+      "web_url": "www.phpconf.org",
+      "live_url": "www.canliyayindenemesitesi.com/izle",
+      "android_url": "www.androiduygulamaadresideneme.com",
+      "ios_url": "www.iosuygulamaadresideneme.com",
+      "format": {
+        "id": 5,
+        "name": "Eğitim",
+        "slug": "egitim"
+      },
+      "category": {
+        "id": 4015,
+        "name": "Aşçılık ve Mutfak",
+        "slug": "ascilik-ve-mutfak"
+      },
+      "venue": {
+        "id": 2818,
+        "name": "İTÜ Maçka İşletme Fakültesi Konf. Sal.",
+        "slug": "itu-macka-isletme-fak-konf-sa",
+        "about": "Mekan hakkında bilgi.",
+        "lat": 34.567854,
+        "lng": 43.345678,
+        "phone": "+90 212 212 2122",
+        "web_url": "www.mekanadideneme.com",
+        "facebook_url": "Etkinlikio-1565101957082313",
+        "twitter_url": "etkinlikio",
+        "city": {
+          "id": 40,
+          "name": "İstanbul",
+          "slug": "istanbul"
+        },
+        "district": {
+          "id": 450,
+          "name": "Beşiktaş",
+          "slug": "besiktas"
+        },
+        "neighborhood": {
+          "id": 2256,
+          "name": "Maslak",
+          "slug": "maslak"
+        },
+        "address": "İTÜ İşletme Fakültesi"
+      },
+      "tags": [
+        {
+          "id": 4015,
+          "name": "Aşçılık ve Mutfak",
+          "slug": "ascilik-ve-mutfak"
+        },
+        {
+          "id": 3805,
+          "name": "Dil ve Edebiyat",
+          "slug": "dil-ve-edebiyat"
+        }
+      ]
+    }
+  ]
+}

@@ -61,6 +61,7 @@ const FOOTER_CONTENT: ViewStyle = {
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
   ({ navigation }) => {
     const nextScreen = () => navigation.navigate("demo")
+    const nextScreen1 = () => navigation.navigate("activityList")
 
     var myloop = [];
 
@@ -102,7 +103,7 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
               style={BUTTON}
               textStyle={BUTTON_TEXT}
               tx="welcomeScreen.type"
-              onPress={nextScreen}
+              onPress={nextScreen1}
             />
           </View>
         </SafeAreaView>

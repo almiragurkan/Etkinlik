@@ -2,6 +2,7 @@ import { Instance, SnapshotOut, types } from "mobx-state-tree"
 import { CharacterModel, CharacterSnapshot } from "../character/character"
 import { CharacterApi } from "../../services/api/character-api"
 import { withEnvironment } from "../extensions/with-environment"
+import { ActivityApi } from "../../services/api/activity-api"
 
 /**
  * Example store containing Rick and Morty characters
@@ -22,6 +23,10 @@ export const CharacterStoreModel = types
       const characterApi = new CharacterApi(self.environment.api)
       const result = await characterApi.getCharacters()
 
+      const activityApi = new ActivityApi(self.environment.api)
+      const result1 = await activityApi.getActivities()
+
+      console.log(result1)
       if (result.kind === "ok") {
         self.saveCharacters(result.characters)
       } else {

@@ -20,7 +20,8 @@ export class ActivityApi {
         { amount: API_PAGE_SIZE },
       )
       console.log("============================================================================================")
-console.log(response)
+      console.log(response)
+
       // the typical ways to die when calling an api
       if (!response.ok) {
         const problem = getGeneralApiProblem(response)

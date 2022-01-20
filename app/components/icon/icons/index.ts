@@ -3,7 +3,11 @@ export const icons = {
   bullet: require("./bullet.png"),
   bug: require("./ladybug.png"),
   heart: require("./heart.png"),
-  profile: require("./profile-icon.png")
+  heartb: require("./heartb.png"),
+  profile: require("./profile-icon.png"),
+  bars: require("./bars.png"),
+  checkIcon:("./check.png"),
+
 }
 
 export type IconTypes = keyof typeof icons

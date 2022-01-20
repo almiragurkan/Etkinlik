@@ -1,0 +1,646 @@
+{
+  "meta": {
+    "total_count": 2859
+  },
+  "items": [
+    {
+      "id": 169553,
+      "name": "Arı Maya Show",
+      "slug": "ari-maya-show",
+      "url": "https://etkinlik.io/etkinlik/169553/ari-maya-show",
+      "content": "<strong>Arı Maya Show yeniden çocuklarla buluşuyor...</strong><br /><br />Arı Maya Show çekirge Philip'in Arı Maya'ya doğum günü partisi hazırlamaya çalışmasıyla başlar ve ona arı Willy'nin yardım etmeye çalışmasıyla devam eder ama çözüm bulunamaz. Bu sırada Arı Maya'nın doğum günü olduğunu öğrenen Lili'nin yardım çalışmaları da Willy ve Philip'in sakarlıkları ile komik bir hal alır. Arkadaşlığın konu alındığı bu müzikal tüm çocuklarımıza arkadaşlığı en baştan tekrar öğretiyor.",
+      "start": "2022-01-20T18:00:00+03:00",
+      "end": "2022-01-20T19:30:00+03:00",
+      "is_free": false,
+      "poster_url": "https://backend.ifyazilim.com/image?url=https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2022/1/ari-maya-show-169553.png",
+      "ticket_url": "https://backend.etkinlik.io/api/v2/events/169553/ticket-url",
+      "phone": null,
+      "email": null,
+      "facebook_url": null,
+      "twitter_url": null,
+      "hashtag": null,
+      "web_url": null,
+      "live_url": null,
+      "android_url": null,
+      "ios_url": null,
+      "format": {
+        "id": 7,
+        "name": "Sahne Sanatları",
+        "slug": "sahne-sanatlari"
+      },
+      "category": {
+        "id": 88,
+        "name": "Çocuk Tiyatrosu",
+        "slug": "cocuk-tiyatrosu"
+      },
+      "venue": {
+        "id": 62670,
+        "name": "Mamak Necip Fazıl Kültür Merkezi",
+        "slug": "mamak-necip-fazil-kultur-merkezi",
+        "about": "",
+        "lat": null,
+        "lng": null,
+        "status": 0,
+        "phone": null,
+        "web_url": null,
+        "facebook_url": null,
+        "twitter_url": null,
+        "city": {
+          "id": 7,
+          "name": "Ankara",
+          "slug": "ankara"
+        },
+        "district": {
+          "id": 83,
+          "name": "Mamak",
+          "slug": "mamak"
+        },
+        "neighborhood": null,
+        "address": "Başak, 1681. Sk. No:12, 06320 Mamak"
+      },
+      "tags": [
+        {
+          "id": 88,
+          "name": "Çocuk Tiyatrosu",
+          "slug": "cocuk-tiyatrosu"
+        }
+      ]
+    },
+    {
+      "id": 166578,
+      "name": "Manga",
+      "slug": "manga",
+      "url": "https://etkinlik.io/etkinlik/166578/manga",
+      "content": "maNga, 20 Ocak'ta 01 Burda PGM sahnesinde...",
+      "start": "2022-01-20T19:00:00+03:00",
+      "end": "2022-01-20T21:00:00+03:00",
+      "is_free": false,
+      "poster_url": "https://backend.ifyazilim.com/image?url=https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2021/12/manga-166578.png",
+      "ticket_url": "https://backend.etkinlik.io/api/v2/events/166578/ticket-url",
+      "phone": null,
+      "email": null,
+      "facebook_url": null,
+      "twitter_url": null,
+      "hashtag": null,
+      "web_url": null,
+      "live_url": null,
+      "android_url": null,
+      "ios_url": null,
+      "format": {
+        "id": 19,
+        "name": "Konser",
+        "slug": "konser"
+      },
+      "category": {
+        "id": 300,
+        "name": "Rock Müzik",
+        "slug": "rock-muzik"
+      },
+      "venue": {
+        "id": 59953,
+        "name": "01 Burda PGM Sahne - Adana",
+        "slug": "01-burda-pgm-sahne-adana",
+        "about": "",
+        "lat": null,
+        "lng": null,
+        "status": 0,
+        "phone": null,
+        "web_url": null,
+        "facebook_url": null,
+        "twitter_url": null,
+        "city": {
+          "id": 1,
+          "name": "Adana",
+          "slug": "adana"
+        },
+        "district": {
+          "id": 12,
+          "name": "Seyhan",
+          "slug": "seyhan"
+        },
+        "neighborhood": null,
+        "address": "Ahmet Remzi Yüreğir, Mahallesi, Erdal Acet Cd. No:1, 01130 Seyhan"
+      },
+      "tags": [
+        {
+          "id": 300,
+          "name": "Rock Müzik",
+          "slug": "rock-muzik"
+        }
+      ]
+    },
+    {
+      "id": 167013,
+      "name": "Benimle İtalya’ya gel: Toscana Yemekleri",
+      "slug": "benimle-italya-ya-gel-toscana-yemekleri",
+      "url": "https://etkinlik.io/etkinlik/167013/benimle-italya-ya-gel-toscana-yemekleri",
+      "content": "<strong>Eataly Mutfak Atölyesi’nde İtalya’yı size getiriyoruz, İtalyan mutfağının en karakteristik tarifleri şeflerimiz ile sizlerle!</strong><br /><br />Bugün rotamızı Floransa, Siena, Pienza, Montalcino, Montepulciano, San Gimignano, Arezzo gibi birçok şehrin yer aldığı Toscana bölgesine çeviriyoruz.<br /><br />Hazırsanız bu workshop ile oldukça lezzetli Toscana yemekleri hakkında bol bol konuşacağız, yapımını öğreneceğiz ve sonra afiyetle yiyeceğiz. <br /><br />Eataly'de ne kadar çok bilirseniz o kadar çok keyif alacağınıza inanıyoruz.<br /><br /><em>Panzanella Salatası</em><br /><em>Caciucco</em><br /><em>Cantuccini</em><br /><br /><em><strong>19:00-22:00</strong></em>",
+      "start": "2022-01-20T19:00:00+03:00",
+      "end": "2022-01-20T21:00:00+03:00",
+      "is_free": false,
+      "poster_url": "https://backend.ifyazilim.com/image?url=https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2021/12/benimle-italya-ya-gel-toscana-yemekleri-167013.png",
+      "ticket_url": "https://backend.etkinlik.io/api/v2/events/167013/ticket-url",
+      "phone": null,
+      "email": null,
+      "facebook_url": null,
+      "twitter_url": null,
+      "hashtag": null,
+      "web_url": null,
+      "live_url": null,
+      "android_url": null,
+      "ios_url": null,
+      "format": {
+        "id": 5,
+        "name": "Eğitim",
+        "slug": "egitim"
+      },
+      "category": {
+        "id": 4015,
+        "name": "Aşçılık ve Mutfak",
+        "slug": "ascilik-ve-mutfak"
+      },
+      "venue": {
+        "id": 4180,
+        "name": "Eataly Mutfak Atölyesi",
+        "slug": "eataly-mutfak-atolyesi",
+        "about": "<p>En kaliteli İtalyan yemeklerini yiyebileceğiniz, satın alabileceğiniz ve yedikleriniz hakkında bilgi sahibi olabileceğiniz her şey Eataly Mutfak Atölyesi&nbsp;atısı&nbsp;altında toplandı.<br />\r\n<br />\r\nEataly konsepti, üç yıllık araştırma ve planlama döneminin ardından 2004 yılında olgunlaştı, Eataly ilk mağazasını 2007 yılının Ocak ayında İtalya Torino&rsquo;da açtı.&nbsp;2004 yılından bu yana Eataly, en iyi kalitede gıda ve içecek firmaları kurma veya bu kritere uyan firmalardan hisse satın alma yoluyla ürün gamını oluşturdu.<br />\r\n<br />\r\nFirma, taze etler, işlenmiş et ürünleri, peynir, makarna ve hamur işleri de dahil olmak üzere en kaliteli İtalyan yiyeceklerinin üreticisi ve dağıtımcısı haline geldi.&nbsp;Dünyada 25 Eataly mağazasından 11&rsquo;i İtalya&rsquo;nın Torino, Lingotto, Torino Lagrange, Pinerolo, Asti, Monticello, Milano, Genoa, Bologna, Roma, Bari ve Floransa şehirlerindedir. Eataly, Japonya&rsquo;da 9, ABD&rsquo;de New York ve Chicago olmak üzere 2, Dubai&rsquo;de 1 ve son olarak İstanbul&rsquo;da 1 mağazaya sahiptir.</p>",
+        "lat": "40.993603",
+        "lng": "28.843245",
+        "status": 1,
+        "phone": null,
+        "web_url": null,
+        "facebook_url": null,
+        "twitter_url": null,
+        "city": {
+          "id": 40,
+          "name": "İstanbul",
+          "slug": "istanbul"
+        },
+        "district": {
+          "id": 450,
+          "name": "Beşiktaş",
+          "slug": "besiktas"
+        },
+        "neighborhood": null,
+        "address": "Levazım Mahallesi, Koru Sokak No:2 Zorlu Center – Meydan Katı (Square Floor)"
+      },
+      "tags": [
+        {
+          "id": 4015,
+          "name": "Aşçılık ve Mutfak",
+          "slug": "ascilik-ve-mutfak"
+        }
+      ]
+    },
+    {
+      "id": 167362,
+      "name": "Tolga Şef ile Sokak Lezzetleri",
+      "slug": "tolga-sef-ile-sokak-lezzetleri",
+      "url": "https://etkinlik.io/etkinlik/167362/tolga-sef-ile-sokak-lezzetleri",
+      "content": "<strong>Tolga Şef ile Sokak Lezzetleri, EKS Mutfak Akademisi'nde...</strong><br /><br />Kokoreç<br />Dana Ciğer<br />Şefin Özel Sosları<br />Nohut Dürüm<br />Churros<br /><br />Etkinlik 3 saat sürmektedir.<br />Çalışma düzeni: 10 istasyon mevcut ve istasyonlarda tek kişi çalışmaktadır.<br />Atölye max. 10 kişiliktir.",
+      "start": "2022-01-20T19:00:00+03:00",
+      "end": "2022-01-20T21:00:00+03:00",
+      "is_free": false,
+      "poster_url": "https://backend.ifyazilim.com/image?url=https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2021/12/tolga-sef-ile-sokak-lezzetleri-167362.png",
+      "ticket_url": "https://backend.etkinlik.io/api/v2/events/167362/ticket-url",
+      "phone": null,
+      "email": null,
+      "facebook_url": null,
+      "twitter_url": null,
+      "hashtag": null,
+      "web_url": null,
+      "live_url": null,
+      "android_url": null,
+      "ios_url": null,
+      "format": {
+        "id": 5,
+        "name": "Eğitim",
+        "slug": "egitim"
+      },
+      "category": {
+        "id": 4015,
+        "name": "Aşçılık ve Mutfak",
+        "slug": "ascilik-ve-mutfak"
+      },
+      "venue": {
+        "id": 2890,
+        "name": "EKS Mutfak Akademisi",
+        "slug": "eks-mutfak-akademisi",
+        "about": "<p>2011 yılında Anadolu yakasının diplomalı eğitim veren ilk profesyonel aşçılık okulu olarak kurulan EKS Mutfak Akademisi, okulda verilen diplomalı uzun dönem profesyonel eğitimlerin yanı sıra kısa dönem temel eğitimler, dünya mutfağı eğitimleri ve günlük workshop çalışmaları düzenliyor. Senelerdir biriktirdiği 1000&#39;e yakın yerli ve yabancı yayından oluşan kitap koleksiyonu ile açtığı kütüphanede, gastronomi alanına ilgi duyanlar için önemli bir kaynak tabanı sunan Akademi, verdiği eğitimlerin yanı sıra çok önemli markalara ve restoranlara danışmanlık hizmeti sağlıyor.</p>",
+        "lat": "41.009692",
+        "lng": "29.041385",
+        "status": 1,
+        "phone": "+90 216 325 15 00",
+        "web_url": "www.eksmutfak.com.tr",
+        "facebook_url": null,
+        "twitter_url": null,
+        "city": {
+          "id": 40,
+          "name": "İstanbul",
+          "slug": "istanbul"
+        },
+        "district": {
+          "id": 463,
+          "name": "Kadıköy",
+          "slug": "kadikoy"
+        },
+        "neighborhood": null,
+        "address": "Validebağ Meydanı. Koşuyolu Mehmet Akman Sok. 3-5/2"
+      },
+      "tags": [
+        {
+          "id": 4015,
+          "name": "Aşçılık ve Mutfak",
+          "slug": "ascilik-ve-mutfak"
+        }
+      ]
+    },
+    {
+      "id": 167649,
+      "name": "Masterpiece Galata Resim - Ruh Eşi",
+      "slug": "masterpiece-galata-resim-ruh-esi",
+      "url": "https://etkinlik.io/etkinlik/167649/masterpiece-galata-resim-ruh-esi",
+      "content": "<strong>Sanat, müzik ve keyfin bir arada olduğu Masterpiece etkinlikleri, sizlerle buluşmaya devam ediyor.</strong><br /><br />\"Keyifli bir ortamda güzel müzikler eşliğinde, sonunda kendinizi bile şaşırtacak yağlıboya tablolar yapabilirsiniz. Daha önce resim yapmış olmanıza gerek yok, hatta yapmamışsanız çok daha keyifli olabilir. Masterpiece bir resim kursu değil, resim ile dolu geçireceğiniz bir keyif seansı. Sanatçılarımızın adım adım yönlendirmeleri ile seçmiş olduğunuz eseri tamamlayacak ve etkinlik sonunda evinize, ofisinize götürüp asabileceğiniz, arkadaşlarınıza hediye edebileceğiniz size ait bir yağlıboya tablonuz olacak.<br /><br />Beyoğlu Galata'dayız. Etkinliğe ilişkin gerekli tüm malzemeleri biz sağlıyoruz. Sizin tek yapmanız gereken dilerseniz en sevdiğiniz içeceği alıp gelmek! Birlikte sanat konuşacağız, tablolar yapacağız ve çok eğleneceğiz.\"",
+      "start": "2022-01-20T19:00:00+03:00",
+      "end": "2022-01-20T21:00:00+03:00",
+      "is_free": false,
+      "poster_url": "https://backend.ifyazilim.com/image?url=https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2021/12/masterpiece-galata-resim-ruh-esi-167649.png",
+      "ticket_url": "https://backend.etkinlik.io/api/v2/events/167649/ticket-url",
+      "phone": null,
+      "email": null,
+      "facebook_url": null,
+      "twitter_url": null,
+      "hashtag": null,
+      "web_url": null,
+      "live_url": null,
+      "android_url": null,
+      "ios_url": null,
+      "format": {
+        "id": 5,
+        "name": "Eğitim",
+        "slug": "egitim"
+      },
+      "category": {
+        "id": 75,
+        "name": "Sanat",
+        "slug": "sanat"
+      },
+      "venue": {
+        "id": 1888,
+        "name": "Masterpiece Galata",
+        "slug": "masterpiece-galata",
+        "about": "<p>Taksim Asmalımescit&#39;te güzel müzikler eşliğinde kendinizi bile şaşırtacak tablolar yapacağınız Masterpiece,&nbsp;resim ile dolu 3 saat geçireceğiniz bir keyif seansı. Sonunda evinize, ofisinize götürüp asabileceğiniz, arkadaşlarınıza hediye edebileceğiniz size ait eserleriniz olacak...</p>",
+        "lat": "41.030086",
+        "lng": "28.974406",
+        "status": 1,
+        "phone": null,
+        "web_url": null,
+        "facebook_url": null,
+        "twitter_url": null,
+        "city": {
+          "id": 40,
+          "name": "İstanbul",
+          "slug": "istanbul"
+        },
+        "district": {
+          "id": 453,
+          "name": "Beyoğlu",
+          "slug": "beyoglu"
+        },
+        "neighborhood": null,
+        "address": "Müeyyedzade Mah. Hoca Ali Sok. No:15 A"
+      },
+      "tags": [
+        {
+          "id": 75,
+          "name": "Sanat",
+          "slug": "sanat"
+        }
+      ]
+    },
+    {
+      "id": 167827,
+      "name": "Masterpiece Ankara Resim -  Ruh Eşi",
+      "slug": "masterpiece-ankara-resim-ruh-esi",
+      "url": "https://etkinlik.io/etkinlik/167827/masterpiece-ankara-resim-ruh-esi",
+      "content": "<strong>Sanat, müzik ve keyfin bir arada olduğu Masterpiece etkinlikleri, sizlerle buluşmaya devam ediyor.</strong><br /><br />\"Keyifli bir ortamda güzel müzikler eşliğinde, sonunda kendinizi bile şaşırtacak yağlıboya tablolar yapabilirsiniz. Daha önce resim yapmış olmanıza gerek yok, hatta yapmamışsanız çok daha keyifli olabilir. Masterpiece bir resim kursu değil, resim ile dolu geçireceğiniz bir keyif seansı. Sanatçılarımızın adım adım yönlendirmeleri ile seçmiş olduğunuz eseri tamamlayacak ve etkinlik sonunda evinize, ofisinize götürüp asabileceğiniz, arkadaşlarınıza hediye edebileceğiniz size ait bir yağlıboya tablonuz olacak.<br /><br />Ankara Tunalı Hilmi’deyiz. Etkinliğe ilişkin gerekli tüm malzemeleri biz sağlıyoruz. Sizin tek yapmanız gereken dilerseniz en sevdiğiniz içeceği alıp gelmek! Birlikte sanat konuşacağız, tablolar yapacağız ve çok eğleneceğiz.\"",
+      "start": "2022-01-20T19:00:00+03:00",
+      "end": "2022-01-20T21:00:00+03:00",
+      "is_free": false,
+      "poster_url": "https://backend.ifyazilim.com/image?url=https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2021/12/masterpiece-ankara-resim-ruh-esi-167827.jpg",
+      "ticket_url": "https://backend.etkinlik.io/api/v2/events/167827/ticket-url",
+      "phone": null,
+      "email": null,
+      "facebook_url": null,
+      "twitter_url": null,
+      "hashtag": null,
+      "web_url": null,
+      "live_url": null,
+      "android_url": null,
+      "ios_url": null,
+      "format": {
+        "id": 5,
+        "name": "Eğitim",
+        "slug": "egitim"
+      },
+      "category": {
+        "id": 75,
+        "name": "Sanat",
+        "slug": "sanat"
+      },
+      "venue": {
+        "id": 3789,
+        "name": "Masterpiece Ankara",
+        "slug": "masterpiece-ankara",
+        "about": "<p>&quot;Sanat, müzik, keyif... Keyifli bir ortamda güzel müziklereşliğinde, sonunda kendinizi bile şaşırtacak tablolar&nbsp;yapabilirsiniz. Daha önce resim yapmış olmanıza gerek yok, hatta&nbsp;yapmamışsanız çok daha keyifli olabilir. Masterpiece bir resim&nbsp;kursu değil, resim ile dolu 3 saat geçireceğiniz bir keyif seansı.&nbsp;Sonunda evinize, ofisinize götürüp asabileceğiniz, arkadaşlarınıza&nbsp;hediye edebileceğiniz size ait eserleriniz olacak.<br />\r\n<br />\r\nAnkara Tunus Caddesi&#39;nde&#39; bulunan Masterpiece Ankara , müziği ve&nbsp;gerekli tüm malzemeleri sizin için sağlıyor. Birlikte sanat&nbsp;konuşacağız, tablolar yapacağız ve çok eğleneceğiz.&quot;</p>",
+        "lat": "39.904201",
+        "lng": "32.859716",
+        "status": 0,
+        "phone": null,
+        "web_url": null,
+        "facebook_url": null,
+        "twitter_url": null,
+        "city": {
+          "id": 7,
+          "name": "Ankara",
+          "slug": "ankara"
+        },
+        "district": {
+          "id": 71,
+          "name": "Çankaya",
+          "slug": "cankaya"
+        },
+        "neighborhood": null,
+        "address": "Remzi Oğuz Arık Mah. Tunus Cad. 91/A Kavaklıdere"
+      },
+      "tags": [
+        {
+          "id": 75,
+          "name": "Sanat",
+          "slug": "sanat"
+        }
+      ]
+    },
+    {
+      "id": 167991,
+      "name": "Masterpiece Galata Heykel - Kiss",
+      "slug": "masterpiece-galata-heykel-kiss",
+      "url": "https://etkinlik.io/etkinlik/167991/masterpiece-galata-heykel-kiss",
+      "content": "<strong>Sanat, müzik ve keyfin bir arada olduğu Masterpiece etkinlikleri, sizlerle buluşmaya devam ediyor.</strong><br /><br />Keyifli bir ortamda güzel müzikler eşliğinde sonunda kendinizi bile şaşırtacak heykeller yapacaksınız. Heykel sanatına ilişkin deneyim sahibi olmanıza gerek yok, hatta daha önce hiç heykel yapmamışsanız çok daha keyifli. Masterpiece bir kurs değil, kil ve formlar ile dolu geçireceğiniz bir keyif seansı. Heykeltıraşlarımızın adım adım yönlendirmeleri ile sonunda evinize, ofisinize götürebileceğiniz, arkadaşlarınıza hediye edebileceğiniz size ait bir heykeliniz olacak.<br /><br />Beyoğlu Galata'dayız. Gerekli tüm malzemeleri biz sağlıyoruz. Sizin tek yapmanız  gereken dilerseniz en sevdiğiniz içeceği alıp gelmek! Birlikte sanat konuşacağız, heykel yapacağız, kile dokunarak rahatlayacağız ve çok eğleneceğiz.",
+      "start": "2022-01-20T19:00:00+03:00",
+      "end": "2022-01-20T21:00:00+03:00",
+      "is_free": false,
+      "poster_url": "https://backend.ifyazilim.com/image?url=https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2021/12/masterpiece-galata-heykel-kiss-167991.png",
+      "ticket_url": "https://backend.etkinlik.io/api/v2/events/167991/ticket-url",
+      "phone": null,
+      "email": null,
+      "facebook_url": null,
+      "twitter_url": null,
+      "hashtag": null,
+      "web_url": null,
+      "live_url": null,
+      "android_url": null,
+      "ios_url": null,
+      "format": {
+        "id": 5,
+        "name": "Eğitim",
+        "slug": "egitim"
+      },
+      "category": {
+        "id": 75,
+        "name": "Sanat",
+        "slug": "sanat"
+      },
+      "venue": {
+        "id": 3261,
+        "name": "Masterpiece Galata Heykel",
+        "slug": "masterpiece-galata-heykel",
+        "about": "<p>&quot;Keyifli bir ortamda güzel müzikler eşliğinde sonunda kendini bile şaşırtacak heykeller yapacaksın. Daha önce deneyim sahibi olmana gerek yok. Hatta yapmamışsan çok daha keyifli. &nbsp;Masterpiece bir heykel kursu değil, form ve strüktür ile dolu geçireceğin 3 saatlik bir keyif seansı. Sonunda evine, ofisine götürebileceğin, arkadaşlarına hediye edebileceğin sana ait bir eserin olacak. Karaköy Kurşunlu Han&#39;dayız.&nbsp;Müzik ve gerekli tüm malzemeler bizden.&nbsp;Sanat konuşuyoruz, heykel yapıyoruz, çok eğleniyoruz.&nbsp;Bekleriz!&quot;</p>",
+        "lat": "41.022921",
+        "lng": "28.972907",
+        "status": 0,
+        "phone": null,
+        "web_url": null,
+        "facebook_url": null,
+        "twitter_url": null,
+        "city": {
+          "id": 40,
+          "name": "İstanbul",
+          "slug": "istanbul"
+        },
+        "district": {
+          "id": 453,
+          "name": "Beyoğlu",
+          "slug": "beyoglu"
+        },
+        "neighborhood": null,
+        "address": "Tersane Cad. Kardeşim Sok. Kurşunlu Han 26/19"
+      },
+      "tags": [
+        {
+          "id": 75,
+          "name": "Sanat",
+          "slug": "sanat"
+        }
+      ]
+    },
+    {
+      "id": 167992,
+      "name": "Masterpiece Ankara Heykel - Kiss",
+      "slug": "masterpiece-ankara-heykel-kiss",
+      "url": "https://etkinlik.io/etkinlik/167992/masterpiece-ankara-heykel-kiss",
+      "content": "<strong>Sanat, müzik ve keyfin bir arada olduğu Masterpiece etkinlikleri, sizlerle buluşmaya devam ediyor.</strong><br /><br />Keyifli bir ortamda güzel müzikler eşliğinde sonunda kendinizi bile şaşırtacak heykeller yapacaksınız. Heykel sanatına ilişkin deneyim sahibi olmanıza gerek yok, hatta daha önce hiç heykel yapmamışsanız çok daha keyifli. Masterpiece bir kurs değil, kil ve formlar ile dolu geçireceğiniz bir keyif seansı. Heykeltıraşlarımızın adım adım yönlendirmeleri ile sonunda evinize, ofisinize götürebileceğiniz, arkadaşlarınıza hediye edebileceğiniz size ait bir heykeliniz olacak. <br /><br />Ankara Tunalı Hilmi’deyiz. Gerekli tüm malzemeleri biz sağlıyoruz. Sizin tek yapmanız gereken dilerseniz en sevdiğiniz içeceği alıp gelmek! Birlikte sanat konuşacağız, heykel yapacağız, kile dokunarak rahatlayacağız ve çok eğleneceğiz.",
+      "start": "2022-01-20T19:00:00+03:00",
+      "end": "2022-01-20T21:00:00+03:00",
+      "is_free": false,
+      "poster_url": "https://backend.ifyazilim.com/image?url=https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2021/12/masterpiece-ankara-heykel-kiss-167992.png",
+      "ticket_url": "https://backend.etkinlik.io/api/v2/events/167992/ticket-url",
+      "phone": null,
+      "email": null,
+      "facebook_url": null,
+      "twitter_url": null,
+      "hashtag": null,
+      "web_url": null,
+      "live_url": null,
+      "android_url": null,
+      "ios_url": null,
+      "format": {
+        "id": 5,
+        "name": "Eğitim",
+        "slug": "egitim"
+      },
+      "category": {
+        "id": 75,
+        "name": "Sanat",
+        "slug": "sanat"
+      },
+      "venue": {
+        "id": 3789,
+        "name": "Masterpiece Ankara",
+        "slug": "masterpiece-ankara",
+        "about": "<p>&quot;Sanat, müzik, keyif... Keyifli bir ortamda güzel müziklereşliğinde, sonunda kendinizi bile şaşırtacak tablolar&nbsp;yapabilirsiniz. Daha önce resim yapmış olmanıza gerek yok, hatta&nbsp;yapmamışsanız çok daha keyifli olabilir. Masterpiece bir resim&nbsp;kursu değil, resim ile dolu 3 saat geçireceğiniz bir keyif seansı.&nbsp;Sonunda evinize, ofisinize götürüp asabileceğiniz, arkadaşlarınıza&nbsp;hediye edebileceğiniz size ait eserleriniz olacak.<br />\r\n<br />\r\nAnkara Tunus Caddesi&#39;nde&#39; bulunan Masterpiece Ankara , müziği ve&nbsp;gerekli tüm malzemeleri sizin için sağlıyor. Birlikte sanat&nbsp;konuşacağız, tablolar yapacağız ve çok eğleneceğiz.&quot;</p>",
+        "lat": "39.904201",
+        "lng": "32.859716",
+        "status": 0,
+        "phone": null,
+        "web_url": null,
+        "facebook_url": null,
+        "twitter_url": null,
+        "city": {
+          "id": 7,
+          "name": "Ankara",
+          "slug": "ankara"
+        },
+        "district": {
+          "id": 71,
+          "name": "Çankaya",
+          "slug": "cankaya"
+        },
+        "neighborhood": null,
+        "address": "Remzi Oğuz Arık Mah. Tunus Cad. 91/A Kavaklıdere"
+      },
+      "tags": [
+        {
+          "id": 75,
+          "name": "Sanat",
+          "slug": "sanat"
+        }
+      ]
+    },
+    {
+      "id": 167994,
+      "name": "Masterpiece İzmir Heykel -Kiss",
+      "slug": "masterpiece-izmir-heykel-kiss",
+      "url": "https://etkinlik.io/etkinlik/167994/masterpiece-izmir-heykel-kiss",
+      "content": "<strong>Sanat, müzik ve keyfin bir arada olduğu Masterpiece etkinlikleri, sizlerle buluşmaya devam ediyor.</strong><br /><br />Keyifli bir ortamda güzel müzikler eşliğinde sonunda kendinizi bile şaşırtacak heykeller yapacaksınız. Heykel sanatına ilişkin deneyim sahibi olmanıza gerek yok, hatta daha önce hiç heykel yapmamışsanız çok daha keyifli. Masterpiece bir kurs değil, kil ve formlar ile dolu geçireceğiniz bir keyif seansı. Heykeltıraşlarımızın adım adım yönlendirmeleri ile sonunda evinize, ofisinize götürebileceğiniz, arkadaşlarınıza hediye edebileceğiniz size ait bir heykeliniz olacak.<br /><br />İzmir Kıbrıs Şehitleri’ndeyiz. Etkinliğe ilişkin gerekli tüm malzemeleri biz sağlıyoruz. Sizin tek yapmanız gereken dilerseniz en sevdiğiniz içeceği alıp gelmek! Birlikte sanat konuşacağız, heykel yapacağız, kile dokunarak rahatlayacağız ve çok eğleneceğiz.",
+      "start": "2022-01-20T19:00:00+03:00",
+      "end": "2022-01-20T21:00:00+03:00",
+      "is_free": false,
+      "poster_url": "https://backend.ifyazilim.com/image?url=https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2021/12/masterpiece-izmir-heykel-kiss-167994.png",
+      "ticket_url": "https://backend.etkinlik.io/api/v2/events/167994/ticket-url",
+      "phone": null,
+      "email": null,
+      "facebook_url": null,
+      "twitter_url": null,
+      "hashtag": null,
+      "web_url": null,
+      "live_url": null,
+      "android_url": null,
+      "ios_url": null,
+      "format": {
+        "id": 5,
+        "name": "Eğitim",
+        "slug": "egitim"
+      },
+      "category": {
+        "id": 75,
+        "name": "Sanat",
+        "slug": "sanat"
+      },
+      "venue": {
+        "id": 4159,
+        "name": "Masterpiece İzmir",
+        "slug": "masterpiece-izmir",
+        "about": "<p>Masterpiece İzmir’in keyifli ortamında sonunda kendinizi bile şaşırtacak tablolar yapabilirsiniz. Daha önce resim yapmış olmanıza gerek yok, hatta yapmamışsanız çok daha keyifli olabilir. Masterpiece bir resim kursu değil, resim ile dolu geçireceğiniz bir keyif ve deneyim seansı. Sonunda evinize, ofisinize götürüp asabileceğiniz, arkadaşlarınıza hediye edebileceğiniz size ait eserleriniz olacak.</p>",
+        "lat": "38.437868",
+        "lng": "27.144622",
+        "status": 1,
+        "phone": "",
+        "web_url": "",
+        "facebook_url": "",
+        "twitter_url": "",
+        "city": {
+          "id": 41,
+          "name": "İzmir",
+          "slug": "izmir"
+        },
+        "district": {
+          "id": 500,
+          "name": "Konak",
+          "slug": "konak"
+        },
+        "neighborhood": {
+          "id": 2390,
+          "name": "ALSANCAK",
+          "slug": "alsancak"
+        },
+        "address": "Alsancak Mah. Yüzbaşı Şerafettin Bey Sok.No. 42"
+      },
+      "tags": [
+        {
+          "id": 75,
+          "name": "Sanat",
+          "slug": "sanat"
+        }
+      ]
+    },
+    {
+      "id": 168884,
+      "name": "Hocapaşa Mevlevileri - Sema Ayini - Ocak Ayı Etkinlikleri",
+      "slug": "hocapasa-mevlevileri-sema-ayini-ocak-ayi-etkinlikleri",
+      "url": "https://etkinlik.io/etkinlik/168884/hocapasa-mevlevileri-sema-ayini-ocak-ayi-etkinlikleri",
+      "content": "<strong>Galata Mevlevileri'nin sunduğu Sema Gösterisi ve Semazen Dünyası Sergisi, Hocapaşa Kültür Merkezi'nde gerçekleşiyor.</strong><br /><br />Canlı tasavvuf müziği eşliğinde enfes sema gösterisi ve Sema geleneğinin spiritüel bakış açısı ile sunulduğu eşsiz sergi deneyimi büyüleyici bir atmosferde bir arada…<br /><br />Derviş aksesuarlarından heykellere, kıyafetlerden müzik aletlerine kadar sema kültürü ile ilgili her şeyi bulabileceğiniz bu sergi ile Sema ayini daha anlamlı ve daha kapsamlı..<br /><strong><br />Mevlevilik ve Sema</strong><br />Mevlevilik, adını ve ilkelerinin kurucusu olan Mevlana Celaleddin Rumi'den (Mevlana) alır. Farsça’dan Arapça’ya geçmiş bir kelime olan Sema (sufi) ise, mevlevi seremonilerinde yer alan; <br />dua, dua eden kişi, şarkı, dans aktiviteleri anlamında kullanılır. Mevlevilik felsefesi, 800 yılı aşkın bir süredir “Sema” ile gelecek kuşaklara taşınmaktadır.<br /><br />Mevlana’nın tasavvufu, bireysel ihtiraslardan tamamiyle sıyrılarak sosyal hayatta sınırsız bir sevgi, insanî bir görüş ve mutlak bir birlik halinde, hayra, güzele ve iyiye doğru bir gidişi simgeleyen bir tasavvuftur. Bu tasavvuftan ilham alarak oluşan ve gelişen Sema, kemale doğru manevi bir yolculuğu yani bir gidiş-gelişi temsil eder. 7 bölümden oluşan Sema’nın her bölümünün ayrı bir manası vardır ama temel düşünce “Var olmanın temel şartı dönmektir” ilkesi üzerine kuruludur. Evrendeki her ufak zerreden en uzak yıldızlara kadar mevcut her varlığın arasındaki ortak benzerlik, kendi etrafındaki döngüsüdür. İşte bu temelden yola çıkarak Sema, kulun gerçeğe yönelip, aklı ve aşkla yücelip, nefsini terk ederek Hak'ta yok oluşu ve olgunluğa ermiş, kamil bir insan olarak tekrar kulluğuna dönüşünü simgeler. Sağdan sola kalbin etrafında dönerek gerçekleşen bu dönüş, bütün varlıklara, bütün yaratılanlara yeni bir ruhla ve bütün kalbiyle sevgi ve aşkla kucaklayışıdır.<br /><br />Semazenlerin başındaki külah mezar taşına, sırtındaki hırkası mezarına ve üzerindeki tennuresi ise de kefenine işaret eder. Semazenler, geleneksel ve kutsal rutinleri sonrasında semaya başlar. Kollarını çapraz bağlayarak, görünüşte BİR rakamını temsil eden, böylece Allah'ın birliğini tasdik eden Semazen, Sema ederken sağ elini yukarıya (dua edercesine göklere), sol elini de aşağıya (Hak gözüyle) bakacak şekilde yere dönük çevirir. Bu duruş, Mevlana'nın \"Allah'tan aldıklarını kendisine mal etmeden halka ulaştırmasını ve kendisinin bedenen önemsizliğini” temsil etmektedir.<br /><br /><em>*Etkinlikte Covid-19 önlemleri alınmaktadır.</em>",
+      "start": "2022-01-20T19:00:00+03:00",
+      "end": "2022-01-29T19:00:00+03:00",
+      "is_free": false,
+      "poster_url": "https://backend.ifyazilim.com/image?url=https://ifyazilim.nyc3.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2022/1/hocapasa-mevlevileri-sema-ayini-ocak-ayi-etkinlikleri-168884.jpg",
+      "ticket_url": "https://backend.etkinlik.io/api/v2/events/168884/ticket-url",
+      "phone": null,
+      "email": null,
+      "facebook_url": null,
+      "twitter_url": null,
+      "hashtag": null,
+      "web_url": null,
+      "live_url": null,
+      "android_url": null,
+      "ios_url": null,
+      "format": {
+        "id": 7,
+        "name": "Sahne Sanatları",
+        "slug": "sahne-sanatlari"
+      },
+      "category": {
+        "id": 3974,
+        "name": "Dans ve Müzikal Gösteriler",
+        "slug": "dans-ve-muzikal-gosteriler"
+      },
+      "venue": {
+        "id": 367,
+        "name": "Hocapaşa Kültür Merkezi",
+        "slug": "hocapasa-kultur-merkezi",
+        "about": null,
+        "lat": "41.013880",
+        "lng": "28.976415",
+        "status": 1,
+        "phone": null,
+        "web_url": null,
+        "facebook_url": null,
+        "twitter_url": null,
+        "city": {
+          "id": 40,
+          "name": "İstanbul",
+          "slug": "istanbul"
+        },
+        "district": {
+          "id": 460,
+          "name": "Fatih",
+          "slug": "fatih"
+        },
+        "neighborhood": null,
+        "address": "No: 3.B, Hocapaşa Hamam Sokak, Ankara Caddesi, Sirkeci"
+      },
+      "tags": [
+        {
+          "id": 3974,
+          "name": "Dans ve Müzikal Gösteriler",
+          "slug": "dans-ve-muzikal-gosteriler"
+        },
+        {
+          "id": 4075,
+          "name": "Bale Dans",
+          "slug": "bale-dans"
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { AutoImage as Image } from "../../components"
 /* import { IconTypes } from "../../components/icon/icons/index" */
 
 
-const bowserLogo = require("../screens/welcome/bowser.png")
+const noPictureLogo = require("../screens/welcome/no-picture.png")
 
 const CARD: ViewStyle ={
   flex:1,
@@ -15,8 +15,9 @@ const CARD: ViewStyle ={
   flexDirection: "column",
   maxWidth: "90%",
   alignItems:"center",
-  padding:10,
-  marginBottom:10
+  padding:30,
+  marginBottom:10,
+  maxHeight:500,
 }
 const PICTURE: ImageStyle = {
   alignSelf: "center",
@@ -53,13 +54,13 @@ const PLACE_TEXT: TextStyle = {
   flexDirection:'row',
 }
 const TYPE_TEXT: TextStyle = {
-  flex:1,
   color: 'black',
   fontWeight: '400',
   fontSize: 15,
   textAlign: 'center',
   alignItems:'center',
   flexDirection:'row',
+  padding:0.1
 }
 
 const BUTTON: ViewStyle = {
@@ -75,7 +76,6 @@ const BUTTON: ViewStyle = {
 }
 
 const LIKE_BUTTON: ViewStyle = {
-  flex:1,
   borderWidth: 1,
   borderColor: 'grey',
   borderRadius: 7,
@@ -85,7 +85,7 @@ const LIKE_BUTTON: ViewStyle = {
   width:25,
   height:25,
   alignSelf:'flex-end',
-  flexGrow: 1,
+  flexGrow: 0.01,
 }
 
 
@@ -107,8 +107,10 @@ const Card = () => {
         {/* <Text style={TYPE_TEXT}>♥</Text> */}
         <Text style={TYPE_TEXT}>{state}</Text>
       </TouchableOpacity>
-      <Image source={bowserLogo} style={PICTURE} />
-      <Text style={HEADER_TEXT}>Etkinlik Başlığı</Text>
+      <Image source={noPictureLogo} style={PICTURE} />
+      <TouchableOpacity style={{flex:1}}>
+        <Text style={HEADER_TEXT}>Etkinlik Başlığı</Text>
+      </TouchableOpacity>
       <Text style={DATE_TEXT}>Tarih Saat</Text>
       <Text style={PLACE_TEXT}>Yer</Text>
       <Text style={TYPE_TEXT}>Tür</Text>

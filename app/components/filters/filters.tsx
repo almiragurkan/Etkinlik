@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { View } from 'react-native';
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
-import { Icon } from "../icon/icon"
+import {MaterialIcons} from '@expo/vector-icons'
 
 const items = [
   {
@@ -67,7 +67,7 @@ export const Filters = () => {
       <View>
         <SectionedMultiSelect
           items={items}
-          IconRenderer={Icon}
+          IconRenderer={MaterialIcons}
           uniqueKey="id"
           subKey="children"
           selectText="Filtrele"

@@ -41,21 +41,23 @@ const HEADER_TITLE: TextStyle = {
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
   ({ navigation }) => {
     const nextScreen = () => navigation.navigate("demo")
-    const nextScreen1 = () => navigation.navigate("activityList")
+    const nextScreen2 = () => navigation.navigate("activityDetail")
 
     var myloop = [];
 
     for (let i = 0; i < 10; i++) {
       myloop.push(
-          <Card key={i}></Card>
+          <Card key={i} /* onTarget={nextScreen1()} */></Card>
       );
     }
+
+    /* const onTarget=(screen) => navigation.navigate(screen) */
 
     return (
       <View testID="WelcomeScreen" style={FULL}>
         <GradientBackground colors={["#422443", "#281b34"]} />
         <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-          <Header headerTx="welcomeScreen.etkinlik" rightIcon="profile" leftIcon={"bars"} onLeftPress={nextScreen1}
+          <Header headerTx="welcomeScreen.activity" rightIcon="profile" leftIcon={"bars"} onLeftPress={nextScreen2}
                   onRightPress={nextScreen} style={HEADER} titleStyle={HEADER_TITLE} />
           <View style={{flex:1, alignItems:"center"}}>
             {myloop}

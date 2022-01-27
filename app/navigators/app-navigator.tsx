@@ -8,7 +8,14 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { WelcomeScreen, DemoScreen, DemoListScreen, ActivityListScreen, ActivityDetailScreen } from "../screens"
+import {
+  WelcomeScreen,
+  DemoScreen,
+  DemoListScreen,
+  ActivityListScreen,
+  ActivityDetailScreen,
+  ProfileScreen, FiltersScreen,
+} from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 
 /**
@@ -30,6 +37,8 @@ export type NavigatorParamList = {
   demoList: undefined
   activityDetail: undefined
   profile: undefined
+  filter:undefined
+  filters:undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
@@ -48,6 +57,8 @@ const AppStack = () => {
       <Stack.Screen name="demoList" component={DemoListScreen} />
       <Stack.Screen name="activityList" component={ActivityListScreen} />
       <Stack.Screen name="activityDetail" component={ActivityDetailScreen} />
+      <Stack.Screen name="profile" component={ProfileScreen} />
+      <Stack.Screen name="filter" component={FiltersScreen} />
     </Stack.Navigator>
   )
 }

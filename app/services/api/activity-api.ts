@@ -28,8 +28,7 @@ export class ActivityApi {
         if (problem) return problem
       }
 
-      const activities = response.data.results
-
+      const activities = response.data.items
       return { kind: "ok", activities }
     } catch (e) {
       __DEV__ && console.tron.log(e.message)

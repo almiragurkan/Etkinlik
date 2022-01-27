@@ -40,7 +40,7 @@ const HEADER_TITLE: TextStyle = {
 
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
   ({ navigation }) => {
-    const nextScreen = () => navigation.navigate("demo")
+    const nextScreen = () => navigation.navigate("filter")
     const nextScreen2 = () => navigation.navigate("activityDetail")
 
     var myloop = [];
@@ -57,8 +57,8 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
       <View testID="WelcomeScreen" style={FULL}>
         <GradientBackground colors={["#422443", "#281b34"]} />
         <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-          <Header headerTx="welcomeScreen.activity" rightIcon="profile" leftIcon={"bars"} onLeftPress={nextScreen2}
-                  onRightPress={nextScreen} style={HEADER} titleStyle={HEADER_TITLE} />
+          <Header headerTx="welcomeScreen.activity" rightIcon="profile" leftIcon={"bars"} onLeftPress={nextScreen}
+                  onRightPress={nextScreen2} style={HEADER} titleStyle={HEADER_TITLE} />
           <View style={{flex:1, alignItems:"center"}}>
             {myloop}
           </View>

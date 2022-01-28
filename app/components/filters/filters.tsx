@@ -60,7 +60,7 @@ export const Filters = () => {
 
   const onSelectedItemsChange = (selectedItems) => {
     setSelectedItems([{ selectedItems }]);
-    console.log(selectedItems.id)
+    __DEV__ && console.log(selectedItems.id)
   };
 
     return (

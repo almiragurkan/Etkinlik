@@ -20,7 +20,7 @@ export const ActivityStoreModel = types
       const activityApi = new ActivityApi(self.environment.api)
       const result = await activityApi.getActivities()
 
-      console.log(result)
+      __DEV__ && console.log(result)
 
       if (result.kind === "ok") {
         self.saveActivities(result.activities)

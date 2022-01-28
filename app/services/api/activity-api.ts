@@ -19,8 +19,8 @@ export class ActivityApi {
         "https://raw.githubusercontent.com/almiragurkan/Etkinlik/Etkinlik/app/data/etkinlik.json",
         { amount: API_PAGE_SIZE },
       )
-      console.log("============================================================================================")
-      console.log(response)
+      __DEV__ && console.log("============================================================================================")
+      __DEV__ && console.log(response)
 
       // the typical ways to die when calling an api
       if (!response.ok) {

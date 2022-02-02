@@ -90,12 +90,13 @@ const HEADER: TextStyle = {
   paddingHorizontal: 5,
 }
 const HEADER_TITLE: TextStyle = {
-  fontSize: 20,
+  fontSize: 14,
   lineHeight: 15,
   textAlign: "center",
   letterSpacing: 1.5,
   color: 'black',
   fontWeight: 'bold',
+  textTransform:"uppercase"
 }
 
 

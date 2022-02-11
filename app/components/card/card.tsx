@@ -18,7 +18,6 @@ const CARD: ViewStyle ={
   alignItems:"center",
   padding:30,
   marginBottom:10,
-  maxHeight:500,
 }
 const PICTURE: ImageStyle = {
   alignSelf: "center",

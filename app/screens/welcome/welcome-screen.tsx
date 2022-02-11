@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from "react"
-import { View, ViewStyle, TextStyle, Text, FlatList } from "react-native"
+import { View, ViewStyle, TextStyle, FlatList } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
 import { observer } from "mobx-react-lite"
 import {
@@ -80,7 +80,7 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
         <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
           <Header headerTx="welcomeScreen.activity" rightIcon="profile" leftIcon={"bars"} onLeftPress={nextScreen}
                   onRightPress={nextScreen2} style={HEADER} titleStyle={HEADER_TITLE} />
-          <View style={{flex:1, alignItems:"center", backgroundColor:"pink", justifyContent:"center"}}>
+          <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
             <FlatList
               contentContainerStyle={FLAT_LIST}
               data={[...activities]}

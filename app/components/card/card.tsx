@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { FlatList, ImageStyle, StyleProp, Text, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
 import { AutoImage as Image } from "../../components"
 import { observer } from "mobx-react-lite"
-
+import moment from "moment"
 /* import { IconTypes } from "../../components/icon/icons/index" */
 
 
@@ -86,14 +86,16 @@ export interface CardProps {
   activityName?:any
   date?:any
   category?:any
+  format?:any
+  venue?:any
+  poster?:any
 }
 
 
 export const Card  = observer(function Card(props: CardProps) {
-  const {style, onPressDetail, id, activityName, date, category} = props
+  const {style, onPressDetail, id, activityName, date, category, format, venue, poster} = props
 
-
-/*   console.log(category) */
+  const formattedDate=moment(date).format('MMMM Do YYYY, h:mm')
 
   return (
     <View style={CARD}>
@@ -101,9 +103,9 @@ export const Card  = observer(function Card(props: CardProps) {
       <TouchableOpacity  onPress={onPressDetail}>
         <Text style={HEADER_TEXT}>{activityName}</Text>
       </TouchableOpacity>
-      <Text style={DATE_TEXT}>{date}</Text>
-      <Text style={PLACE_TEXT}>Yer(venue.city.name ve venue.district.name)</Text>
-      <Text style={TYPE_TEXT}>Tür(format.name)</Text>
+      <Text style={DATE_TEXT}>{formattedDate}</Text>
+      <Text style={PLACE_TEXT}>{venue.city.name}</Text>
+      <Text style={TYPE_TEXT}>{format.name}</Text>
       <TouchableOpacity style={BUTTON}>
         <Text>
           {category.name}

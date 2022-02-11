@@ -5,6 +5,20 @@ export const ActivityCategoryModel = types.model("ActivityCategory").props({
   name: types.maybe(types.string),
   slug: types.optional(types.string, "", [null, undefined]),
 })
+export const ActivityFormatModel = types.model("ActivityFormat").props({
+  id: types.maybe(types.number),
+  name: types.maybe(types.string),
+  slug: types.optional(types.string, "", [null, undefined]),
+})
+export const ActivityCityModel = types.model("ActivityVenueCity").props({
+  id: types.maybe(types.number),
+  name: types.maybe(types.string),
+  slug: types.optional(types.string, "", [null, undefined]),
+})
+export const ActivityVenueModel = types.model("ActivityVenue").props({
+  city:types.optional(ActivityCityModel, {}),
+})
+
 
 export const ActivityModel = types.model("Activity").props({
   id: types.identifierNumber,
@@ -15,6 +29,8 @@ export const ActivityModel = types.model("Activity").props({
   start: types.optional(types.string, "", [null, undefined]),
   end: types.optional(types.string, "", [null, undefined]),
   is_free: types.optional(types.boolean, false, [null, undefined]),
+  poster_url: types.optional(types.string, "aaa", [null, undefined]),
+  ticket_url: types.optional(types.string, "", [null, undefined]),
   phone: types.optional(types.string, "", [null, undefined]),
   email: types.optional(types.string, "", [null, undefined]),
   facebook_url: types.optional(types.string, "", [null, undefined]),
@@ -25,6 +41,8 @@ export const ActivityModel = types.model("Activity").props({
   android_url: types.optional(types.string, "", [null, undefined]),
   ios_url: types.optional(types.string, "", [null, undefined]),
   category: types.optional(ActivityCategoryModel, {}),
+  format: types.optional(ActivityFormatModel, {}),
+  venue: types.optional(ActivityVenueModel, {}),
 })
 
 

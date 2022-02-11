@@ -54,7 +54,7 @@ export const DemoListScreen: FC<StackScreenProps<NavigatorParamList, "demoList">
         await characterStore.getCharacters()
       }
 
-      fetchData()
+      fetchData().then((value) => console.log(value))
     }, [])
 
     return (

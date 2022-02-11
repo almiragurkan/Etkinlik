@@ -63,30 +63,36 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
     const { activityStore } = useStores()
     const { activities } = activityStore
 
+
     useEffect(() => {
       async function fetchData() {
 
         await activityStore.getActivities()
       }
 
-      fetchData()
+      fetchData().then((value) => console.log(value))
     }, [])
 
-    /* const onTarget=(screen) => navigation.navigate(screen) */
 
     return (
       <View testID="WelcomeScreen" style={FULL}>
         <GradientBackground colors={["#422443", "#281b34"]} />
-        <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-          <Header headerTx="welcomeScreen.activity" rightIcon="profile" leftIcon={"bars"} onLeftPress={nextScreen}
-                  onRightPress={nextScreen2} style={HEADER} titleStyle={HEADER_TITLE} />
+        <Screen style={CONTAINER} backgroundColor={color.transparent}>
+          <Header headerTx="welcomeScreen.activity" leftIcon={"bars"} onLeftPress={nextScreen}
+                  style={HEADER} titleStyle={HEADER_TITLE} />
           <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
             <FlatList
               contentContainerStyle={FLAT_LIST}
               data={[...activities]}
               keyExtractor={(item) => String(item.id)}
               renderItem={({ item }) => (
-                <Card id={item.id} onPressDetail={nextScreen3} activityName={item.name} date={item.start} category={item.category}/>
+                <Card id={item.id} onPressDetail={nextScreen2}
+                      activityName={item.name}
+                      date={item.start}
+                      category={item.category}
+                      format={item.format}
+                      venue={item.venue}
+                />
               )}
             />
           </View>

@@ -86,7 +86,7 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
               data={[...activities]}
               keyExtractor={(item) => String(item.id)}
               renderItem={({ item }) => (
-                <Card id={item.id} onPressDetail={nextScreen3} activityName={item.name} date={item.start} category={item.category}></Card>
+                <Card id={item.id} onPressDetail={nextScreen3} activityName={item.name} date={item.start} category={item.category}/>
               )}
             />
           </View>

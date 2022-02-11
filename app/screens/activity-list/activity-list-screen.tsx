@@ -51,7 +51,7 @@ export const ActivityListScreen: FC<StackScreenProps<NavigatorParamList, "activi
         await activityStore.getActivities()
       }
 
-      fetchData()
+      fetchData().then((value) => console.log(value))
     }, [])
 
     return (

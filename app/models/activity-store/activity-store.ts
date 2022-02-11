@@ -22,7 +22,7 @@ export const ActivityStoreModel = types
 
       if (result.kind === "ok") {
         self.saveActivities(result.activities)
-        __DEV__ && console.log(result.activities)
+        __DEV__ && console.log(result.activities[0].category)
       } else {
         //__DEV__ && console.tron.log(result.kind)
       }

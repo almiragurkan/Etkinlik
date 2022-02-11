@@ -14,7 +14,8 @@ import {
   DemoListScreen,
   ActivityListScreen,
   ActivityDetailScreen,
-  ProfileScreen, FiltersScreen,
+  ProfileScreen,
+  FiltersScreen,
 } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 

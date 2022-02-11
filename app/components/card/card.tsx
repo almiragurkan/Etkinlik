@@ -106,7 +106,7 @@ export const Card  = observer(function Card(props: CardProps) {
       <Text style={TYPE_TEXT}>Tür(format.name)</Text>
       <TouchableOpacity style={BUTTON}>
         <Text>
-          category.name{/* {category} */}
+          {category.name}
         </Text>
       </TouchableOpacity>
 

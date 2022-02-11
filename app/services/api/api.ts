@@ -40,6 +40,7 @@ export class Api {
       timeout: this.config.timeout,
       headers: {
         Accept: "application/json",
+        "X-Etkinlik-Token":"445b2310a557e4bb73f7a92cac489269"
       },
     })
   }

@@ -1,6 +1,8 @@
 import React, { useState } from "react"
-import { ImageStyle, Text, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
+import { FlatList, ImageStyle, StyleProp, Text, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
 import { AutoImage as Image } from "../../components"
+import { observer } from "mobx-react-lite"
+
 /* import { IconTypes } from "../../components/icon/icons/index" */
 
 
@@ -13,7 +15,6 @@ const CARD: ViewStyle ={
   borderColor: 'lightgrey',
   borderRadius: 10,
   flexDirection: "column",
-  maxWidth: "90%",
   alignItems:"center",
   padding:30,
   marginBottom:10,
@@ -21,50 +22,54 @@ const CARD: ViewStyle ={
 }
 const PICTURE: ImageStyle = {
   alignSelf: "center",
-  marginTop:0,
   maxWidth: "100%",
 }
 const HEADER_TEXT: TextStyle = {
-  flex:1,
   color: 'black',
   fontWeight: 'bold',
-  fontSize: 30,
+  fontSize: 25,
   textAlign: 'center',
   alignItems:'center',
   flexDirection:'row',
+  marginBottom:5,
 
 }
 
 const DATE_TEXT: TextStyle = {
-  flex:1,
+  /* flex:0.15, */
   color: 'grey',
   fontWeight: 'normal',
   fontSize: 18,
   textAlign: 'center',
   alignItems:'center',
   flexDirection:'row',
+  margin:5,
 }
 const PLACE_TEXT: TextStyle = {
-  flex:1,
+  /* flex:0.15, */
   color: 'dimgrey',
   fontWeight: 'normal',
   fontSize: 15,
   textAlign: 'center',
   alignItems:'center',
   flexDirection:'row',
+  margin:5,
 }
 const TYPE_TEXT: TextStyle = {
+  /* flex:0.15, */
   color: 'black',
   fontWeight: '400',
   fontSize: 15,
   textAlign: 'center',
   alignItems:'center',
   flexDirection:'row',
-  padding:0.1
+  margin:5,
 }
 
 const BUTTON: ViewStyle = {
-  flex:1,
+  /* flex:0.15, */
+  padding:3,
+  margin:5,
   borderWidth: 1,
   borderColor: 'grey',
   borderRadius: 7,
@@ -75,54 +80,37 @@ const BUTTON: ViewStyle = {
   width:200,
 }
 
-const LIKE_BUTTON: ViewStyle = {
-  borderWidth: 1,
-  borderColor: 'grey',
-  borderRadius: 7,
-  justifyContent:'flex-end',
-  alignItems:'center',
-  backgroundColor:'lightgrey',
-  width:25,
-  height:25,
-  alignSelf:'flex-end',
-  flexGrow: 0.01,
+export interface CardProps {
+  style?: StyleProp<ViewStyle>
+  onPressDetail?:any
+  id?:any
+  activityName?:any
+  date?:any
+  category?:any
 }
 
 
+export const Card  = observer(function Card(props: CardProps) {
+  const {style, onPressDetail, id, activityName, date, category} = props
 
 
-const Card = () => {
-
-  const [state, setState] = useState("♡")
-
-
-  const _onPress = () => {
-    setState("♥")
-  }
-
+/*   console.log(category) */
 
   return (
     <View style={CARD}>
-      <TouchableOpacity style={LIKE_BUTTON} /* rightIcon="heart" */ onPress={_onPress}>
-        {/* <Text style={TYPE_TEXT}>♥</Text> */}
-        <Text style={TYPE_TEXT}>{state}</Text>
-      </TouchableOpacity>
       <Image source={noPictureLogo} style={PICTURE} />
-      <TouchableOpacity style={{flex:1}}>
-        <Text style={HEADER_TEXT}>Etkinlik Başlığı</Text>
+      <TouchableOpacity  onPress={onPressDetail}>
+        <Text style={HEADER_TEXT}>{activityName}</Text>
       </TouchableOpacity>
-      <Text style={DATE_TEXT}>Tarih Saat</Text>
-      <Text style={PLACE_TEXT}>Yer</Text>
-      <Text style={TYPE_TEXT}>Tür</Text>
+      <Text style={DATE_TEXT}>{date}</Text>
+      <Text style={PLACE_TEXT}>Yer(venue.city.name ve venue.district.name)</Text>
+      <Text style={TYPE_TEXT}>Tür(format.name)</Text>
       <TouchableOpacity style={BUTTON}>
         <Text>
-          İlgi Alanı
+          category.name{/* {category} */}
         </Text>
       </TouchableOpacity>
 
     </View>
   );
-}
-
-
-export default Card;
+})

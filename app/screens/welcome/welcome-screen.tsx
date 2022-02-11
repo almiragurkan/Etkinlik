@@ -1,15 +1,17 @@
-import React, { FC } from "react"
-import { View, ViewStyle, TextStyle } from "react-native"
+import React, { FC, useEffect } from "react"
+import { View, ViewStyle, TextStyle, Text, FlatList } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
 import { observer } from "mobx-react-lite"
 import {
   Header,
   Screen,
-  GradientBackground, Filters,
+  GradientBackground,
+  Card
 } from "../../components"
 import { color, spacing, typography } from "../../theme"
 import { NavigatorParamList } from "../../navigators"
-import Card from "../../components/card/card"
+import { useStores } from "../../models"
+
 
 
 const FULL: ViewStyle = { flex: 1 }
@@ -35,6 +37,18 @@ const HEADER_TITLE: TextStyle = {
   textAlign: "center",
   letterSpacing: 1.5,
 }
+const LIST_CONTAINER: ViewStyle = {
+  alignItems: "center",
+  flexDirection: "row",
+  padding: 10,
+}
+
+const LIST_TEXT: TextStyle = {
+  marginLeft: 10,
+}
+const FLAT_LIST: ViewStyle = {
+  paddingHorizontal: spacing[4],
+}
 
 
 
@@ -42,14 +56,21 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
   ({ navigation }) => {
     const nextScreen = () => navigation.navigate("filter")
     const nextScreen2 = () => navigation.navigate("activityDetail")
+    const nextScreen3 = () => navigation.navigate("activityList")
 
-    var myloop = [];
 
-    for (let i = 0; i < 10; i++) {
-      myloop.push(
-          <Card key={i} /* onTarget={nextScreen1()} */></Card>
-      );
-    }
+
+    const { activityStore } = useStores()
+    const { activities } = activityStore
+
+    useEffect(() => {
+      async function fetchData() {
+
+        await activityStore.getActivities()
+      }
+
+      fetchData()
+    }, [])
 
     /* const onTarget=(screen) => navigation.navigate(screen) */
 
@@ -59,12 +80,18 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
         <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
           <Header headerTx="welcomeScreen.activity" rightIcon="profile" leftIcon={"bars"} onLeftPress={nextScreen}
                   onRightPress={nextScreen2} style={HEADER} titleStyle={HEADER_TITLE} />
-          <View style={{flex:1, alignItems:"center"}}>
-            {myloop}
+          <View style={{flex:1, alignItems:"center", backgroundColor:"pink", justifyContent:"center"}}>
+            <FlatList
+              contentContainerStyle={FLAT_LIST}
+              data={[...activities]}
+              keyExtractor={(item) => String(item.id)}
+              renderItem={({ item }) => (
+                <Card id={item.id} onPressDetail={nextScreen3} activityName={item.name} date={item.start} category={item.category}></Card>
+              )}
+            />
           </View>
 
         </Screen>
-        <Filters></Filters>
       </View>
     )
   },

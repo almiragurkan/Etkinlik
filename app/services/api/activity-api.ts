@@ -16,11 +16,12 @@ export class ActivityApi {
     try {
       // make the api call
       const response: ApiResponse<any> = await this.api.apisauce.get(
-        "https://raw.githubusercontent.com/almiragurkan/Etkinlik/Etkinlik/app/data/etkinlik.json",
+        // "https://raw.githubusercontent.com/almiragurkan/Etkinlik/Etkinlik/app/data/etkinlik.json",
+        "https://backend.etkinlik.io/api/v2/events?take=10",
         { amount: API_PAGE_SIZE },
       )
       __DEV__ && console.log("============================================================================================")
-      __DEV__ && console.log(response)
+      // __DEV__ && console.log(response)
 
       // the typical ways to die when calling an api
       if (!response.ok) {
@@ -29,6 +30,7 @@ export class ActivityApi {
       }
 
       const activities = response.data.items
+      __DEV__ && console.log(activities)
       return { kind: "ok", activities }
     } catch (e) {
       __DEV__ && console.tron.log(e.message)

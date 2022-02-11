@@ -72,7 +72,7 @@ export const ActivityListScreen: FC<StackScreenProps<NavigatorParamList, "activi
             renderItem={({ item }) => (
               <View style={LIST_CONTAINER}>
                 <Text style={LIST_TEXT}>
-                  {item.name} ({item.is_free} {item.web_url})
+                  {item.name} ({item.id} {item.start})
                 </Text>
               </View>
             )}

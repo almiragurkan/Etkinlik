@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { observer } from "mobx-react-lite"
-import { ImageStyle, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
+import { ImageStyle, ScrollView, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
 import { AutoImage as Image, Header, Screen, Text } from "../../components"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
@@ -15,41 +15,38 @@ const ROOT: ViewStyle = {
   flex: 1,
   flexDirection: "column",
   alignItems:"center",
-  padding:30,
 }
 const FULL: ViewStyle = { flex: 1 }
 
 const PICTURE: ImageStyle = {
-  alignSelf: "center",
-  marginTop:0,
-  maxWidth: "100%",
 }
 const PLACE_TEXT: TextStyle = {
-  flex:1,
   color: 'dimgrey',
   fontWeight: 'normal',
   fontSize: 15,
   textAlign: 'center',
   alignItems:'center',
   flexDirection:'row',
+  marginVertical:5,
 }
-const EXPLANATION: TextStyle = {
-  flex:1,
+const EXPLANATION_TEXT: TextStyle = {
   color: 'grey',
   fontWeight: 'normal',
   fontSize: 18,
   textAlign: 'center',
   alignItems:'center',
   flexDirection:'row',
+  marginHorizontal:15,
+  marginVertical:5,
 }
 const DATE_TEXT: TextStyle = {
-  flex:1,
   color: 'grey',
   fontWeight: 'normal',
   fontSize: 18,
   textAlign: 'center',
   alignItems:'center',
   flexDirection:'row',
+  marginVertical:5,
 }
 /* const TYPE_TEXT: TextStyle = {
   color: 'black',
@@ -61,7 +58,6 @@ const DATE_TEXT: TextStyle = {
   padding:0.1
 } */
 const BUTTON: ViewStyle = {
-  flex:1,
   borderWidth: 1,
   borderColor: 'black',
   borderRadius: 7,
@@ -70,22 +66,12 @@ const BUTTON: ViewStyle = {
   alignItems:'center',
   backgroundColor:'green',
   width:200,
+  height:50,
+  margin:5
 }
-/* const LIKE_BUTTON: ViewStyle = {
-  borderWidth: 1,
-  borderColor: 'grey',
-  borderRadius: 7,
-  justifyContent:'flex-end',
-  alignItems:'center',
-  backgroundColor:'lightgrey',
-  width:25,
-  height:25,
-  alignSelf:'flex-end',
-  flexGrow: 0.01,
-} */
+
 const HEADER: TextStyle = {
-  flex:1,
-  paddingTop: 1,
+  paddingTop: 50,
   paddingBottom: 5,
   paddingHorizontal: 5,
 }
@@ -105,12 +91,6 @@ export const ActivityDetailScreen:FC<StackScreenProps<NavigatorParamList, "activ
 
   const goBack = () => navigation.goBack()
 
-/*   const [state, setState] = useState("♡")
-
-
-  const _onPress = () => {
-    setState("♥")
-  } */
   return (
     <View testID="ActivityDetailScreen" style={FULL}>
     <Screen style={ROOT} preset="scroll">
@@ -121,19 +101,19 @@ export const ActivityDetailScreen:FC<StackScreenProps<NavigatorParamList, "activ
         style={HEADER}
         titleStyle={HEADER_TITLE}
       />
-      {/* <TouchableOpacity style={LIKE_BUTTON} onPress={_onPress}>
-        <Text style={TYPE_TEXT}>{state}</Text>
-      </TouchableOpacity> */}
+
       <Image source={noPictureLogo} style={PICTURE} />
+      <ScrollView>
       <Text style={DATE_TEXT}>Tarih Saat</Text>
       <Text style={PLACE_TEXT}>Yer</Text>
-      <Text style={EXPLANATION}>Açıklama</Text>
+      <Text style={PLACE_TEXT}>Ücret</Text>
+      <Text style={EXPLANATION_TEXT}>AçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıkAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklamaAçıklama</Text>
+      </ScrollView>
       <TouchableOpacity style={BUTTON}>
         <Text>
           Bilet Al
         </Text>
       </TouchableOpacity>
-
     </Screen>
     </View>
   )

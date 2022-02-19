@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { FlatList, ImageStyle, StyleProp, Text, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
+import React from "react"
+import { ImageStyle, StyleProp, Text, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
 import { AutoImage as Image } from "../../components"
 import { observer } from "mobx-react-lite"
 import moment from "moment"
@@ -100,7 +100,7 @@ export const Card  = observer(function Card(props: CardProps) {
   return (
     <View style={CARD}>
       <Image source={noPictureLogo} style={PICTURE} />
-      <TouchableOpacity  onPress={onPressDetail}>
+      <TouchableOpacity  onPress={()=>onPressDetail(id)}>
         <Text style={HEADER_TEXT}>{activityName}</Text>
       </TouchableOpacity>
       <Text style={DATE_TEXT}>{formattedDate}</Text>

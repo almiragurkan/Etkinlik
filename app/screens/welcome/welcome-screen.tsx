@@ -55,9 +55,9 @@ const FLAT_LIST: ViewStyle = {
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
   ({ navigation }) => {
     const nextScreen = () => navigation.navigate("filter")
-    const nextScreen2 = () => navigation.navigate("activityDetail")
-    const nextScreen3 = () => navigation.navigate("activityList")
-
+    const nextScreen2 = (activityId) => {
+      navigation.navigate("activityDetail", {activityId: activityId})
+    }
 
 
     const { activityStore } = useStores()
@@ -66,7 +66,6 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
 
     useEffect(() => {
       async function fetchData() {
-
         await activityStore.getActivities()
       }
 

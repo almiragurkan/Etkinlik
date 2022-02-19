@@ -36,7 +36,7 @@ export type NavigatorParamList = {
   demo: undefined
   activityList: undefined
   demoList: undefined
-  activityDetail: undefined
+  activityDetail: {activityId}
   profile: undefined
   filter:undefined
   filters:undefined

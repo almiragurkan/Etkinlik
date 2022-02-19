@@ -1,4 +1,4 @@
-import { Instance, SnapshotOut, types } from "mobx-state-tree"
+import { flow, Instance, SnapshotOut, types } from "mobx-state-tree"
 import { ActivityModel, ActivitySnapshot } from "../activity/activity"
 import { ActivityApi } from "../../services/api/activity-api"
 import { withEnvironment } from "../extensions/with-environment"
@@ -27,7 +27,22 @@ export const ActivityStoreModel = types
         //__DEV__ && console.tron.log(result.kind)
       }
     },
+
   }))
+  .actions((self) => ({
+    findActivity: flow(function* (id: any){
+      if (id===null){
+        return null
+      }
+      for(let i=0; i<self.activities.length; i++){
+        if (self.activities[i].id===id){
+          return self.activities[i]
+        }
+      }
+      return null
+    })
+  }))
+
 
 type ActivityStoreType = Instance<typeof ActivityStoreModel>
 export interface ActivityStore extends ActivityStoreType {}

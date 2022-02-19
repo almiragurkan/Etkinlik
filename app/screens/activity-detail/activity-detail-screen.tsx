@@ -1,14 +1,12 @@
-import React, { FC } from "react"
+import React, { FC, useEffect, useState } from "react"
 import { observer } from "mobx-react-lite"
-import { ImageStyle, ScrollView, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
-import { AutoImage as Image, Header, Screen, Text } from "../../components"
-// import { useNavigation } from "@react-navigation/native"
-// import { useStores } from "../../models"
+import { TextStyle, View, ViewStyle } from "react-native"
+import { Detail, Header, Screen } from "../../components"
 import { color } from "../../theme"
 import { StackScreenProps } from "@react-navigation/stack"
 import { NavigatorParamList } from "../../navigators"
+import { useStores } from "../../models"
 
-const noPictureLogo = require("../screens/welcome/no-picture.png")
 
 const ROOT: ViewStyle = {
   backgroundColor: color.palette.lighterGrey,
@@ -18,60 +16,8 @@ const ROOT: ViewStyle = {
 }
 const FULL: ViewStyle = { flex: 1 }
 
-const PICTURE: ImageStyle = {
-}
-const PLACE_TEXT: TextStyle = {
-  color: 'dimgrey',
-  fontWeight: 'normal',
-  fontSize: 15,
-  textAlign: 'center',
-  alignItems:'center',
-  flexDirection:'row',
-  marginVertical:5,
-}
-const EXPLANATION_TEXT: TextStyle = {
-  color: 'grey',
-  fontWeight: 'normal',
-  fontSize: 18,
-  textAlign: 'center',
-  alignItems:'center',
-  flexDirection:'row',
-  marginHorizontal:15,
-  marginVertical:5,
-}
-const DATE_TEXT: TextStyle = {
-  color: 'grey',
-  fontWeight: 'normal',
-  fontSize: 18,
-  textAlign: 'center',
-  alignItems:'center',
-  flexDirection:'row',
-  marginVertical:5,
-}
-/* const TYPE_TEXT: TextStyle = {
-  color: 'black',
-  fontWeight: '400',
-  fontSize: 15,
-  textAlign: 'center',
-  alignItems:'center',
-  flexDirection:'row',
-  padding:0.1
-} */
-const BUTTON: ViewStyle = {
-  borderWidth: 1,
-  borderColor: 'black',
-  borderRadius: 7,
-  flexDirection: "row",
-  justifyContent:'center',
-  alignItems:'center',
-  backgroundColor:'green',
-  width:200,
-  height:50,
-  margin:5
-}
 
 const HEADER: TextStyle = {
-  paddingTop: 50,
   paddingBottom: 5,
   paddingHorizontal: 5,
 }
@@ -87,33 +33,30 @@ const HEADER_TITLE: TextStyle = {
 
 
 export const ActivityDetailScreen:FC<StackScreenProps<NavigatorParamList, "activityDetail">> = observer(
-  ({ navigation }) => {
-
+  ({ route, navigation }) => {
   const goBack = () => navigation.goBack()
 
-  return (
+    const [activityDetail,setActivityDetail] = useState(null)
+    const { activityStore } = useStores()
+
+    useEffect(()=>{
+      if(route.params.activityId)
+        activityStore.findActivity(route.params.activityId)
+          .then(value => setActivityDetail(value))
+    },[activityStore])
+
+    return (
     <View testID="ActivityDetailScreen" style={FULL}>
-    <Screen style={ROOT} preset="scroll">
+    <Screen style={ROOT}>
       <Header
-        headerTx="activityDetailScreen.activity"
         leftIcon="back"
         onLeftPress={goBack}
         style={HEADER}
         titleStyle={HEADER_TITLE}
       />
-
-      <Image source={noPictureLogo} style={PICTURE} />
-      <ScrollView>
-      <Text style={DATE_TEXT}>Tarih Saat</Text>
-      <Text style={PLACE_TEXT}>Yer</Text>
-      <Text style={PLACE_TEXT}>Ücret</Text>
-      <Text style={EXPLANATION_TEXT}>Açıklama</Text>
-      </ScrollView>
-      <TouchableOpacity style={BUTTON}>
-        <Text>
-          Bilet Al
-        </Text>
-      </TouchableOpacity>
+      <View style={FULL}>
+        <Detail activity={activityDetail}/>
+      </View>
     </Screen>
     </View>
   )

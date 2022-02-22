@@ -1,7 +1,9 @@
 import React, { useState } from "react"
-import { View } from 'react-native';
+import { StyleProp, View, ViewStyle } from "react-native"
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
 import {MaterialIcons} from '@expo/vector-icons'
+import { observer } from "mobx-react-lite"
+import { DetailProps } from "../detail/detail"
 
 const items = [
   {
@@ -53,15 +55,22 @@ const items = [
   },
 
 ];
+export interface FilterProps {
+  style?: StyleProp<ViewStyle>
+  onPressDetail?:any
+  activity?:any
+}
 
-export const Filters = () => {
-
+export const Filters = observer(function Detail(props: FilterProps) {
+  const {activity} = props
   const [selectedItems, setSelectedItems] = useState([])
 
   const onSelectedItemsChange = (selectedItems) => {
     setSelectedItems([{ selectedItems }]);
     __DEV__ && console.log(selectedItems.id)
   };
+
+  __DEV__ && console.log(activity)
 
     return (
       <View>
@@ -81,4 +90,4 @@ export const Filters = () => {
     );
 
 
-}
+})

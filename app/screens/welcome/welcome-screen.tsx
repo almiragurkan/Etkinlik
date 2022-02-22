@@ -13,7 +13,6 @@ import { NavigatorParamList } from "../../navigators"
 import { useStores } from "../../models"
 
 
-
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
   backgroundColor: color.transparent,
@@ -37,15 +36,6 @@ const HEADER_TITLE: TextStyle = {
   textAlign: "center",
   letterSpacing: 1.5,
 }
-const LIST_CONTAINER: ViewStyle = {
-  alignItems: "center",
-  flexDirection: "row",
-  padding: 10,
-}
-
-const LIST_TEXT: TextStyle = {
-  marginLeft: 10,
-}
 const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
 }
@@ -59,7 +49,6 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
       navigation.navigate("activityDetail", {activityId: activityId})
     }
 
-
     const { activityStore } = useStores()
     const { activities } = activityStore
 
@@ -71,7 +60,6 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
 
       fetchData().then((value) => console.log(value))
     }, [])
-
 
     return (
       <View testID="WelcomeScreen" style={FULL}>
@@ -91,6 +79,7 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
                       category={item.category}
                       format={item.format}
                       venue={item.venue}
+                      poster={item.poster_url}
                 />
               )}
             />

@@ -33,6 +33,13 @@ const HEADER_TEXT: TextStyle = {
   marginBottom:5,
 }
 const PICTURE: ImageStyle = {
+  marginTop:5,
+  marginBottom:5,
+  borderWidth:7,
+  borderColor:"darkgrey",
+  borderRadius:20,
+  maxWidth:"100%",
+  maxHeight:"100%"
 }
 const PLACE_TEXT: TextStyle = {
   color: 'dimgrey',
@@ -63,7 +70,8 @@ const BUTTON: ViewStyle = {
   backgroundColor:'green',
   width:200,
   height:50,
-  margin:5
+  marginBottom:5,
+  marginTop:20
 }
 
 export interface DetailProps {
@@ -84,9 +92,9 @@ export const Detail = observer(function Detail(props: DetailProps) {
             <Text style={HEADER_TEXT}>Detay Bulunamadı</Text>
             :
             <View style={FULL}>
-              <Image source={noPictureLogo} style={PICTURE} />
+              <Text style={HEADER_TEXT}>{activity.name}</Text>
+              <Image source={{uri: activity.poster_url}} style={PICTURE} />
               <ScrollView contentContainerStyle={{alignItems:"center"}}>
-                <Text style={HEADER_TEXT}>{activity.name}</Text>
                 <Text style={DATE_TEXT}>{moment(activity.start).format('MMMM Do YYYY, h:mm')}</Text>
                 <Text style={PLACE_TEXT}>{activity.venue.city.name}</Text>
                 <Text style={PLACE_TEXT}>{activity.format.name}</Text>

@@ -66,7 +66,6 @@ const TYPE_TEXT: TextStyle = {
 }
 
 const BUTTON: ViewStyle = {
-  /* flex:0.15, */
   padding:3,
   margin:5,
   borderWidth: 1,
@@ -99,7 +98,7 @@ export const Card  = observer(function Card(props: CardProps) {
 
   return (
     <View style={CARD}>
-      <Image source={noPictureLogo} style={PICTURE} />
+      <Image source={{uri: poster}} style={PICTURE} />
       <TouchableOpacity  onPress={()=>onPressDetail(id)}>
         <Text style={HEADER_TEXT}>{activityName}</Text>
       </TouchableOpacity>

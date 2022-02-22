@@ -15,12 +15,13 @@ storiesOf("Icon", module)
       <UseCase text="bullet" usage="The icon for a bullet point">
         <Icon icon="bullet" />
       </UseCase>
-      <UseCase text="heart" usage="The icon for a bullet point">
-        <Icon icon="bullet" />
+      <UseCase text="check" usage="The icon for a check point">
+        <Icon icon="checkIcon" />
       </UseCase>
       <UseCase text="heartb" usage="The icon for a bullet point">
         <Icon icon="bullet" />
       </UseCase>
+
 
     </Story>
   ))

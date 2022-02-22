@@ -22,7 +22,7 @@ export const ActivityStoreModel = types
 
       if (result.kind === "ok") {
         self.saveActivities(result.activities)
-        __DEV__ && console.log(result.activities[0].category)
+        // __DEV__ && console.log(result.activities[0].category)
       } else {
         //__DEV__ && console.tron.log(result.kind)
       }
@@ -36,6 +36,19 @@ export const ActivityStoreModel = types
       }
       for(let i=0; i<self.activities.length; i++){
         if (self.activities[i].id===id){
+          return self.activities[i]
+        }
+      }
+      return null
+    })
+  }))
+  .actions((self) => ({
+    findActivityByFilters: flow(function* (id: any){
+      if (id===null){
+        return null
+      }
+      for(let i=0; i<self.activities.length; i++){
+        if (self.activities[i].venue.city.id===id || self.activities[i].category.id){
           return self.activities[i]
         }
       }

@@ -1,6 +1,7 @@
 import { GeneralApiProblem } from "./api-problem"
 import { Character } from "../../models/character/character"
 import { Activity } from "../../models/activity/activity"
+import { ActivityCategory, ActivityCity } from "../../models"
 
 export interface User {
   id: number
@@ -15,3 +16,9 @@ export type GetCharacterResult = { kind: "ok"; character: Character } | GeneralA
 
 export type GetActivitiesResult = { kind: "ok"; activities: Activity[] } | GeneralApiProblem
 export type GetActivityResult = { kind: "ok"; activity: Activity } | GeneralApiProblem
+
+export type GetActivitiesCitiesResult = { kind: "ok"; activitiesCities: ActivityCity[] } | GeneralApiProblem
+export type GetActivityCityResult = { kind: "ok"; activityCity: ActivityCity } | GeneralApiProblem
+
+export type GetActivitiesCategoriesResult = { kind: "ok"; activitiesCategories: ActivityCategory[] } | GeneralApiProblem
+export type GetActivityCategoryResult = { kind: "ok"; activityCategory: ActivityCategory } | GeneralApiProblem

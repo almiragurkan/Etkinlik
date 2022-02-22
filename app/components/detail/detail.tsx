@@ -15,7 +15,7 @@ import moment from "moment"
 import { AutoImage as Image } from "../auto-image/auto-image"
 import RenderHtml from 'react-native-render-html';
 
-const noPictureLogo = require("../screens/welcome/no-picture.png")
+/* const noPictureLogo = require("../screens/welcome/no-picture.png") */
 
 const FULL: ViewStyle = {
   flex:1,

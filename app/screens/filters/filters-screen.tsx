@@ -1,9 +1,7 @@
-import React, { FC, useEffect, useState } from "react"
+import React, { FC, useEffect } from "react"
 import { observer } from "mobx-react-lite"
 import { ViewStyle } from "react-native"
 import { Filters, Header, Screen } from "../../components"
-// import { useNavigation } from "@react-navigation/native"
-// import { useStores } from "../../models"
 import { color } from "../../theme"
 import { StackScreenProps } from "@react-navigation/stack"
 import { NavigatorParamList } from "../../navigators"
@@ -15,10 +13,20 @@ const ROOT: ViewStyle = {
 }
 
 export const FiltersScreen: FC<StackScreenProps<NavigatorParamList, "filter">> = observer(
-  ({ route, navigation }) => {
+  ({ navigation }) => {
     const goBack = () => navigation.goBack()
-    const { activityStore } = useStores()
+    const { activityCityStore } = useStores()
+    const { activityCategoryStore } = useStores()
 
+    useEffect(()=>{
+      activityCityStore.getActivitiesCities().then()
+      __DEV__&&console.log("")
+    },[activityCityStore])
+
+    useEffect(()=>{
+      activityCategoryStore.getActivitiesCategories().then()
+      __DEV__&&console.log("")
+    },[activityCategoryStore])
 
   return (
     <Screen style={ROOT} preset="scroll">
@@ -26,7 +34,7 @@ export const FiltersScreen: FC<StackScreenProps<NavigatorParamList, "filter">> =
         leftIcon="back"
         onLeftPress={goBack}
       />
-      <Filters activity={activityStore}></Filters>
+      <Filters activityCity={activityCityStore.activityCities} activityCategory={activityCategoryStore.activityCategories} />
     </Screen>
   )
 })

@@ -68,15 +68,12 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
 
     useEffect(()=>{
       activityCityStore.getActivitiesCities()
-        .then()
-          .catch(reason => {
-            __DEV__ && console.log(reason)
-        })
+        .then(()=>{console.log("şehirler çağırıldı.")})
     },[activityCityStore.activityCities])
 
     useEffect(()=>{
       activityCategoryStore.getActivitiesCategories()
-        .then(()=>{console.log("kategoriler çağırıldı.")}).catch()
+        .then(()=>{console.log("kategoriler çağırıldı.")})
     },[activityCategoryStore])
 
     const onFiltersCityChange = (fCityItem) => {

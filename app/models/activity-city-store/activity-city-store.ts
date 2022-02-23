@@ -20,7 +20,6 @@ export const ActivityCityStoreModel = types
       const activityCityApi = new ActivityCityApi(self.environment.api)
       try {
       const result = yield activityCityApi.getActivitiesCities()
-
       // __DEV__ && console.log(result)
 
       if (result.kind === "ok") {

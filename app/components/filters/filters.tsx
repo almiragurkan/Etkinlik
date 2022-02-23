@@ -10,12 +10,13 @@ export interface FilterProps {
   onPressDetail?:any
   activityCity?:any
   activityCategory?:any
-  onFilterChange?: any
+  onFilterCityChange?: any
+  onFilterCatChange?: any
 }
 
 export const Filters = observer(function Detail(props: FilterProps) {
-  const {activityCity, activityCategory, onFilterChange} = props
-  const [selectedItems, setSelectedItems] = useState([])
+  const {activityCity, activityCategory, onFilterCityChange, onFilterCatChange} = props
+  const [selectedItems] = useState([])
 
   const items = [
     {
@@ -23,22 +24,18 @@ export const Filters = observer(function Detail(props: FilterProps) {
       id: 0,
       children: activityCity
     },
+  ];
+  const catItems = [
     {
       name: 'Kategoriler',
       id: 1,
       children: activityCategory,
 
-    },
-
-  ];
-
-  /* const onSelectedItemsChange = (selectedItems) => {
-    setSelectedItems([{ selectedItems }]);
-    __DEV__ && console.log(selectedItems[1])
-  }; */
+    }
+  ]
 
     return (
-      <View>
+      <View style={{alignItems:"center", flexDirection:"row"}}>
         <SectionedMultiSelect
           items={items}
           IconRenderer={MaterialIcons}
@@ -47,7 +44,18 @@ export const Filters = observer(function Detail(props: FilterProps) {
           selectText="Filtrele"
           showDropDowns={true}
           readOnlyHeadings={true}
-          onSelectedItemsChange={onFilterChange}
+          onSelectedItemsChange={onFilterCityChange}
+          selectedItems={selectedItems}
+        />
+        <SectionedMultiSelect
+          items={catItems}
+          IconRenderer={MaterialIcons}
+          uniqueKey="id"
+          subKey="children"
+          selectText="Filtrele"
+          showDropDowns={true}
+          readOnlyHeadings={true}
+          onSelectedItemsChange={onFilterCatChange}
           selectedItems={selectedItems}
         />
       </View>

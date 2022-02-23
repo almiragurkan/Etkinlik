@@ -6,7 +6,9 @@ import moment from "moment"
 /* import { IconTypes } from "../../components/icon/icons/index" */
 
 
+/*
 const noPictureLogo = require("../screens/welcome/no-picture.png")
+*/
 
 const CARD: ViewStyle ={
   flex:1,
@@ -92,7 +94,7 @@ export interface CardProps {
 
 
 export const Card  = observer(function Card(props: CardProps) {
-  const {style, onPressDetail, id, activityName, date, category, format, venue, poster} = props
+  const { onPressDetail, id, activityName, date, category, format, venue, poster} = props
 
   const formattedDate=moment(date).format('MMMM Do YYYY, h:mm')
 

@@ -1,4 +1,4 @@
-import { Instance, SnapshotOut, types } from "mobx-state-tree"
+import { flow, Instance, SnapshotOut, types } from "mobx-state-tree"
 import { ActivityCityModel, ActivityCitySnapshot } from "../activity-city/activity-city"
 import { ActivityCityApi } from "../../services/api/activity-city-api"
 import { withEnvironment } from "../extensions/with-environment"
@@ -11,24 +11,28 @@ export const ActivityCityStoreModel = types
   })
   .extend(withEnvironment)
   .actions((self) => ({
-    saveActivities: (activityCitySnapshots: ActivityCitySnapshot[]) => {
+    saveCityActivities: flow(function* (activityCitySnapshots: ActivityCitySnapshot[]) {
       self.activityCities.replace(activityCitySnapshots)
-    },
+    })
   }))
   .actions((self) => ({
-    getActivitiesCities: async () => {
+    getActivitiesCities: flow (function* () {
       const activityCityApi = new ActivityCityApi(self.environment.api)
-      const result = await activityCityApi.getActivitiesCities()
+      try {
+      const result = yield activityCityApi.getActivitiesCities()
 
       // __DEV__ && console.log(result)
 
       if (result.kind === "ok") {
       // __DEV__ && console.log(result.activitiesCities)
-        self.saveActivities(result.activitiesCities)
+        self.saveCityActivities(result.activitiesCities)
       } else {
         __DEV__ && console.log(result.kind)
       }
-    },
+      } catch (e) {
+        __DEV__ && console.log(e.message)
+      }
+    }),
 
   }))
 

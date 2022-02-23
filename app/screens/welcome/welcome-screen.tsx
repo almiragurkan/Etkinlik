@@ -40,9 +40,6 @@ const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
 }
 
-export interface FilterActivityProps {
-  activityByFilters: any
-}
 
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
   ({ navigation }) => {
@@ -50,40 +47,52 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
       navigation.navigate("activityDetail", {activityId: activityId})
     }
 
+    const[filtersCityItem,setFiltersCityItem] = useState([])
+    const[filtersCatItem,setFiltersCatItem] = useState([])
     const { activityStore } = useStores()
     const { activities } = activityStore
 
 
-    useEffect(() => {
-      async function fetchData() {
-        await activityStore.getActivities()
-      }
+    const fetchData = async () => {
+      await activityStore.getActivities(filtersCityItem,filtersCatItem)
+    }
 
-      fetchData().then((value) => console.log(""))
-    }, [])
+    useEffect(() => {
+      fetchData().then(()=>{console.log("getActivities çağırıldı.")})
+    }, [filtersCityItem,filtersCatItem,activityStore])
+
 
     const { activityCityStore } = useStores()
     const { activityCategoryStore } = useStores()
 
-    useEffect(()=>{
-      activityCityStore.getActivitiesCities().then((value) => console.log(""))
-      __DEV__&&console.log("")
-    },[activityCityStore])
 
     useEffect(()=>{
-      activityCategoryStore.getActivitiesCategories().then((value) => console.log(""))
-      __DEV__&&console.log("")
+      activityCityStore.getActivitiesCities()
+        .then()
+          .catch(reason => {
+            __DEV__ && console.log(reason)
+        })
+    },[activityCityStore.activityCities])
+
+    useEffect(()=>{
+      activityCategoryStore.getActivitiesCategories()
+        .then(()=>{console.log("kategoriler çağırıldı.")}).catch()
     },[activityCategoryStore])
 
+    const onFiltersCityChange = (fCityItem) => {
+      const tmpCity = filtersCityItem
+      tmpCity.push(fCityItem[0])
+      __DEV__ && console.log(filtersCityItem)
+      setFiltersCityItem(tmpCity);
+      fetchData().then()
+    };
 
-    const[filtersItem,setFiltersItem] = useState([])
-
-    const onFiltersChange = (fItem) => {
-      __DEV__ && console.log(fItem[0])
-      const tmpA = filtersItem
-      tmpA.push(fItem[0])
-       __DEV__ && console.log(filtersItem)
-      setFiltersItem(tmpA);
+    const onFiltersCatChange = (fCatItem) => {
+      const tmpCat = filtersCatItem
+      tmpCat.push(fCatItem[0])
+      __DEV__ && console.log(filtersCatItem)
+      setFiltersCatItem(tmpCat);
+      fetchData().then()
     };
 
     return (
@@ -93,8 +102,7 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
           <Header headerTx="welcomeScreen.activity" leftIcon={"bars"}
                   style={HEADER} titleStyle={HEADER_TITLE} />
           <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
-            <Filters activityCity={activityCityStore.activityCities} activityCategory={activityCategoryStore.activityCategories} onFilterChange={onFiltersChange} />
-
+            <Filters activityCity={activityCityStore.activityCities} activityCategory={activityCategoryStore.activityCategories} onFilterCityChange={onFiltersCityChange} onFilterCatChange={onFiltersCatChange} />
             <FlatList
               contentContainerStyle={FLAT_LIST}
               data={[...activities]}

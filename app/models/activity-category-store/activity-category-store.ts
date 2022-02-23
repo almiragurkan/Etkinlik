@@ -1,4 +1,4 @@
-import { Instance, SnapshotOut, types } from "mobx-state-tree"
+import { flow, Instance, SnapshotOut, types } from "mobx-state-tree"
 import { ActivityCategoryModel, ActivityCategorySnapshot } from "../activity-category/activity-category"
 import { withEnvironment } from "../extensions/with-environment"
 import { ActivityCategoryApi } from "../../services/api/activity-category-api"
@@ -13,14 +13,15 @@ export const ActivityCategoryStoreModel = types
   })
   .extend(withEnvironment)
   .actions((self) => ({
-    saveActivities: (activityCategorySnapshots: ActivityCategorySnapshot[]) => {
+    saveActivities: flow (function* (activityCategorySnapshots: ActivityCategorySnapshot[]) {
       self.activityCategories.replace(activityCategorySnapshots)
-    },
+    })
   }))
   .actions((self) => ({
-    getActivitiesCategories: async () => {
+    getActivitiesCategories: flow (function* () {
       const activityCategoryApi = new ActivityCategoryApi(self.environment.api)
-      const result = await activityCategoryApi.getActivitiesCategories()
+      try{
+      const result = yield activityCategoryApi.getActivitiesCategories()
 
       // __DEV__ && console.log(result)
 
@@ -30,7 +31,10 @@ export const ActivityCategoryStoreModel = types
       } else {
         __DEV__ && console.log(result.kind)
       }
-    },
+      } catch (e) {
+        __DEV__ && console.log(e.message)
+      }
+    }),
 
   }))
 

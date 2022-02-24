@@ -3,7 +3,7 @@ import { Api } from "./api"
 import { GetActivitiesResult } from "./api.types"
 import { getGeneralApiProblem } from "./api-problem"
 
-const API_PAGE_SIZE = 20
+const API_PAGE_SIZE = 1000
 
 export class ActivityApi {
   private api: Api
@@ -13,23 +13,21 @@ export class ActivityApi {
   }
 
   async getActivities(API_CITY_ID:any[], API_CAT_ID:any[]): Promise<GetActivitiesResult> {
-    let params = ""
-    params += "take="+ API_PAGE_SIZE
-    if(API_CITY_ID !== []){
-      params += "&city_ids=" + encodeURIComponent(API_CITY_ID.toString())
+    const params:any = {take: API_PAGE_SIZE}
+
+    if(API_CITY_ID.length > 0){
+      params.city_ids = API_CITY_ID.toString()
     }
-    if(API_CAT_ID !== []){
-      params += "&category_ids=" + encodeURIComponent(API_CAT_ID.toString())
+    if(API_CAT_ID.length > 0){
+      params.category_ids = API_CAT_ID.toString()
     }
-    // __DEV__ && console.log(encodeURIComponent(params))
+
 
     try {
       // make the api call
       const response: ApiResponse<any> = await this.api.apisauce.get(
-        // "https://raw.githubusercontent.com/almiragurkan/Etkinlik/Etkinlik/app/data/etkinlik.json",
-        "https://backend.etkinlik.io/api/v2/events?",
-        {params: {city_ids: API_CITY_ID, category_ids: API_CAT_ID} }
-         /* {take: API_PAGE_SIZE, encoded, city_ids: API_CITY_ID.toString(), encoded1, category_ids: API_CAT_ID.toString()}, */
+        "https://backend.etkinlik.io/api/v2/events",
+        params
       )
 
       // the typical ways to die when calling an api

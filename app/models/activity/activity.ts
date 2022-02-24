@@ -40,9 +40,9 @@ export const ActivityModel = types.model("Activity").props({
   live_url: types.optional(types.string, "", [null, undefined]),
   android_url: types.optional(types.string, "", [null, undefined]),
   ios_url: types.optional(types.string, "", [null, undefined]),
-  category: types.optional(ActivityCategoryModel, {}),
-  format: types.optional(ActivityFormatModel, {}),
-  venue: types.optional(ActivityVenueModel, {}),
+  category: types.optional(ActivityCategoryModel, {}, [null, undefined]),
+  format: types.optional(ActivityFormatModel, {}, [null, undefined]),
+  venue: types.optional(ActivityVenueModel, {}, [null, undefined]),
 })
 
 

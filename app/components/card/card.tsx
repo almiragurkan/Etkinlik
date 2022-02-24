@@ -105,7 +105,7 @@ export const Card  = observer(function Card(props: CardProps) {
         <Text style={HEADER_TEXT}>{activityName}</Text>
       </TouchableOpacity>
       <Text style={DATE_TEXT}>{formattedDate}</Text>
-      <Text style={PLACE_TEXT}>{venue.city.name}</Text>
+      <Text style={PLACE_TEXT}>{venue.city.name ?? "-"}</Text>
       <Text style={TYPE_TEXT}>{format.name}</Text>
       <TouchableOpacity style={BUTTON}>
         <Text>

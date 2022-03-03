@@ -39,22 +39,6 @@ const HEADER_TITLE: TextStyle = {
 const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
 }
-/* const VIEW_FILTER: ViewStyle = {
-  flexDirection:"row",
-  margin:5,
-}
-const FILTER_TEXT: TextStyle = {
-  backgroundColor: "lightgrey",
-  marginHorizontal: spacing[4],
-  paddingVertical: spacing[4],
-  alignItems:"center",
-  justifyContent:"center",
-  flexDirection:"row",
-  borderRadius:15,
-  paddingLeft:5,
-  flex:1,
-  flexShrink: 1
-} */
 
 
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
@@ -99,10 +83,15 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
 
     const filterCityFunction=(city)=>{
       setFiltersCityItem(city)
+      console.log(filtersCityItem)
     }
     const filterCategoryFunction=(category)=>{
-      console.log(category)
       setFiltersCatItem(category)
+    }
+
+    const[isFilters,setFilters]=useState(false)
+    const onFilter = () => {
+      isFilters ? setFilters(false) : setFilters(true)
     }
 
 
@@ -110,32 +99,33 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
       <View testID="WelcomeScreen" style={FULL}>
         <GradientBackground colors={["#422443", "#281b34"]} />
         <Screen style={CONTAINER} backgroundColor={color.transparent}>
-          <Header headerTx="welcomeScreen.activity" leftIcon={"bars"}
-                  style={HEADER} titleStyle={HEADER_TITLE} />
+          <Header headerTx="welcomeScreen.activity" leftIcon={"bars2"}
+                  style={HEADER} titleStyle={HEADER_TITLE} onLeftPress={onFilter} />
           <View style={{ flex: 1 }}>
-            <Filters activityCity={activityCityStore.activityCities}
-                     activityCategory={activityCategoryStore.activityCategories} onFilterCityChange={filterCityFunction} onFilterCatChange={filterCategoryFunction} />
-            <View style={{ flex: 1 }}>
-              <FlatList
-                contentContainerStyle={FLAT_LIST}
-                data={[...activities]}
-                keyExtractor={(item) => String(item.id)}
-                renderItem={({ item }) => (
-                  <Card id={item.id} onPressDetail={nextScreen2}
-                        activityName={item.name}
-                        date={item.start}
-                        category={item.category}
-                        format={item.format}
-                        venue={item.venue}
-                        poster={item.poster_url}
-                  />
-                )}
-              />
-            </View>
-
-
+            {
+              isFilters ?
+                <Filters activityCity={activityCityStore.activityCities}
+                         activityCategory={activityCategoryStore.activityCategories} onFilterCityChange={filterCityFunction} onFilterCatChange={filterCategoryFunction} />
+                :
+                <View style={{ flex: 1 }}>
+                    <FlatList
+                      contentContainerStyle={FLAT_LIST}
+                      data={[...activities]}
+                      keyExtractor={(item) => String(item.id)}
+                      renderItem={({ item }) => (
+                          <Card id={item.id} onPressDetail={nextScreen2}
+                                activityName={item.name}
+                                date={item.start}
+                                category={item.category}
+                                format={item.format}
+                                venue={item.venue}
+                                poster={item.poster_url}
+                          />
+                      )}
+                    />
+                </View>
+            }
           </View>
-
         </Screen>
       </View>
     )

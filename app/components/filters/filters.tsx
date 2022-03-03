@@ -2,18 +2,7 @@ import React, { useRef, useState } from "react"
 import { StyleProp, View, ViewStyle } from "react-native"
 import { observer } from "mobx-react-lite"
 import MultiSelect from "react-native-multiple-select"
-import { color } from "../../theme"
 
-/* const FILTER: ViewStyle = {
-  backgroundColor: "pink",
-  marginHorizontal: spacing[4],
-  marginVertical: spacing[4],
-  alignItems:"center",
-  justifyContent:"center",
-  flexDirection:"row",
-  borderRadius:15,
-  flex:1
-} */
 
 export interface FilterProps {
   style?: StyleProp<ViewStyle>
@@ -53,6 +42,7 @@ export const Filters = observer(function Detail(props: FilterProps) {
           selectedItems={selectedCityItems}
           selectText="Şehirler"
           searchInputPlaceholderText="Şehir ara..."
+          noItemsText="Şehir bulunamadı"
           onChangeInput={(text) => console.log(text)}
           tagRemoveIconColor="#CCC"
           tagBorderColor="#CCC"
@@ -64,10 +54,12 @@ export const Filters = observer(function Detail(props: FilterProps) {
           searchInputStyle={{ color: "#CCC" }}
           submitButtonColor="#CCC"
           submitButtonText="Tamam"
-          styleMainWrapper={{ width: 170, height: 200, marginRight: 5, flex: 1 }}
-          styleItemsContainer={{ height: 200 }}
+          styleMainWrapper={{ width: 170, marginLeft: 5 }}
+          styleItemsContainer={{ height: 200}}
+          styleTextDropdown={{paddingLeft:10}}
+          styleTextDropdownSelected={{paddingLeft:10}}
         />
-        <View style={{backgroundColor: color.palette.orangeDarker}}>
+        <View>
           {refCity.current  && refCity.current.getSelectedItemsExt(selectedCityItems) ? refCity.current.getSelectedItemsExt(selectedCityItems) : null}
         </View>
       </View>
@@ -82,6 +74,7 @@ export const Filters = observer(function Detail(props: FilterProps) {
           selectedItems={selectedCatItems}
           selectText="Kategoriler"
           searchInputPlaceholderText="Kategori Ara..."
+          noItemsText="Kategori bulunamadı"
           onChangeInput={(text) => console.log(text)}
           tagRemoveIconColor="#CCC"
           tagBorderColor="#CCC"
@@ -93,18 +86,15 @@ export const Filters = observer(function Detail(props: FilterProps) {
           searchInputStyle={{ color: "#CCC" }}
           submitButtonColor="#CCC"
           submitButtonText="Tamam"
-          styleMainWrapper={{ width: 170, height: 200, marginLeft: 5, flex: 1 }}
-          styleItemsContainer={{ height: 200 }}
+          styleMainWrapper={{ width: 170, marginLeft: 5}}
+          styleItemsContainer={{ height: 200}}
+          styleTextDropdown={{paddingLeft:10}}
+          styleTextDropdownSelected={{paddingLeft:10}}
         />
-        <View style={{backgroundColor: color.palette.orangeDarker}}>
+        <View>
           {refCat.current  && refCat.current.getSelectedItemsExt(selectedCatItems) ? refCat.current.getSelectedItemsExt(selectedCatItems) : null}
         </View>
       </View>
-
-
     </View>
-
   )
-
-
 })

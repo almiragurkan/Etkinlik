@@ -6,6 +6,7 @@ export const icons = {
   heartb: require("./heartb.png"),
   profile: require("./profile-icon.png"),
   bars: require("./bars.png"),
+  bars2: require("./bars2.png"),
   checkIcon:("./check.png"),
 
 }

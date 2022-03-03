@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react"
-import { View, ViewStyle, TextStyle, FlatList, Text, ScrollView } from "react-native"
+import { View, ViewStyle, TextStyle, FlatList } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
 import { observer } from "mobx-react-lite"
 import {
@@ -38,7 +38,6 @@ const HEADER_TITLE: TextStyle = {
 }
 const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
-  flex:1
 }
 /* const VIEW_FILTER: ViewStyle = {
   flexDirection:"row",
@@ -61,37 +60,42 @@ const FILTER_TEXT: TextStyle = {
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
   ({ navigation }) => {
     const nextScreen2 = (activityId) => {
-      navigation.navigate("activityDetail", {activityId: activityId})
+      navigation.navigate("activityDetail", { activityId: activityId })
     }
 
-    const[filtersCityItem,setFiltersCityItem] = useState([])
-    const[filtersCatItem,setFiltersCatItem] = useState([])
+    const [filtersCityItem] = useState([])
+    const [filtersCatItem] = useState([])
     const { activityStore } = useStores()
     const { activities } = activityStore
 
 
     const fetchData = async () => {
-      await activityStore.getActivities(filtersCityItem,filtersCatItem)
+      await activityStore.getActivities(filtersCityItem, filtersCatItem)
     }
 
     useEffect(() => {
-      fetchData().then(()=>{console.log("getActivities çağırıldı.")})
-    }, [filtersCityItem,filtersCatItem,activityStore])
+      fetchData().then(() => {
+        console.log("getActivities çağırıldı.")
+      })
+    }, [filtersCityItem, filtersCatItem, activityStore])
 
 
     const { activityCityStore } = useStores()
     const { activityCategoryStore } = useStores()
 
-    useEffect(()=>{
+    useEffect(() => {
       activityCityStore.getActivitiesCities()
-        .then(()=>{__DEV__ && console.log("şehirler çağırıldı.")})
-    },[activityCityStore.activityCities])
+        .then(() => {
+          __DEV__ && console.log("şehirler çağırıldı.")
+        })
+    }, [activityCityStore.activityCities])
 
-    useEffect(()=>{
+    useEffect(() => {
       activityCategoryStore.getActivitiesCategories()
-        .then(()=>{__DEV__ && console.log("kategoriler çağırıldı.")})
-    },[activityCategoryStore])
-
+        .then(() => {
+          __DEV__ && console.log("kategoriler çağırıldı.")
+        })
+    }, [activityCategoryStore])
 
 
     return (
@@ -100,9 +104,10 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
         <Screen style={CONTAINER} backgroundColor={color.transparent}>
           <Header headerTx="welcomeScreen.activity" leftIcon={"bars"}
                   style={HEADER} titleStyle={HEADER_TITLE} />
-          <View style={{flex:1}}>
-            <Filters activityCity={activityCityStore.activityCities} activityCategory={activityCategoryStore.activityCategories} />
-            <ScrollView style={{flex:1, }}>
+          <View style={{ flex: 1 }}>
+            <Filters activityCity={activityCityStore.activityCities}
+                     activityCategory={activityCategoryStore.activityCategories} />
+            <View style={{ flex: 1 }}>
               <FlatList
                 contentContainerStyle={FLAT_LIST}
                 data={[...activities]}
@@ -118,8 +123,7 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
                   />
                 )}
               />
-            </ScrollView>
-
+            </View>
 
 
           </View>

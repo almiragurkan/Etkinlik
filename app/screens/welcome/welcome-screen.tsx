@@ -63,8 +63,8 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
       navigation.navigate("activityDetail", { activityId: activityId })
     }
 
-    const [filtersCityItem] = useState([])
-    const [filtersCatItem] = useState([])
+    const [filtersCityItem, setFiltersCityItem] = useState([])
+    const [filtersCatItem, setFiltersCatItem] = useState([])
     const { activityStore } = useStores()
     const { activities } = activityStore
 
@@ -97,6 +97,14 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
         })
     }, [activityCategoryStore])
 
+    const filterCityFunction=(city)=>{
+      setFiltersCityItem(city)
+    }
+    const filterCategoryFunction=(category)=>{
+      console.log(category)
+      setFiltersCatItem(category)
+    }
+
 
     return (
       <View testID="WelcomeScreen" style={FULL}>
@@ -106,7 +114,7 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
                   style={HEADER} titleStyle={HEADER_TITLE} />
           <View style={{ flex: 1 }}>
             <Filters activityCity={activityCityStore.activityCities}
-                     activityCategory={activityCategoryStore.activityCategories} />
+                     activityCategory={activityCategoryStore.activityCategories} onFilterCityChange={filterCityFunction} onFilterCatChange={filterCategoryFunction} />
             <View style={{ flex: 1 }}>
               <FlatList
                 contentContainerStyle={FLAT_LIST}

@@ -1,11 +1,9 @@
-import React, { useState } from "react"
-import { StyleProp, Text, View, ViewStyle } from "react-native"
-import SectionedMultiSelect from 'react-native-sectioned-multi-select';
-import {MaterialIcons} from '@expo/vector-icons'
+import React, { useRef, useState } from "react"
+import { StyleProp, View, ViewStyle } from "react-native"
 import { observer } from "mobx-react-lite"
-import { spacing } from "../../theme"
+import MultiSelect from "react-native-multiple-select"
 
-const FILTER: ViewStyle = {
+/* const FILTER: ViewStyle = {
   backgroundColor: "pink",
   marginHorizontal: spacing[4],
   marginVertical: spacing[4],
@@ -14,7 +12,7 @@ const FILTER: ViewStyle = {
   flexDirection:"row",
   borderRadius:15,
   flex:1
-}
+} */
 
 export interface FilterProps {
   style?: StyleProp<ViewStyle>
@@ -26,107 +24,132 @@ export interface FilterProps {
 }
 
 export const Filters = observer(function Detail(props: FilterProps) {
-  const {activityCity, activityCategory, onFilterCityChange, onFilterCatChange} = props
-  const [selectedItems] = useState([])
+  const {activityCity, activityCategory} = props
+  const [selectedCityItems, setSelectedCityItems] = useState([])
+  const [selectedCatItems, setSelectedCatItems] = useState([])
+ /*  const [Buttons, setButtons] = useState([])
 
-  const cityItems = [
-    {
-      name: 'Şehirler',
-      id: 0,
-      children: activityCity
-    },
-  ];
-  const catItems = [
-    {
-      name: 'Kategoriler',
-      id: 1,
-      children: activityCategory,
+  const cityNames=[]
+  const categoryNames=[]
 
-    }
-  ]
-
-/*
-  const customChipsRenderer = (props) => {
-    console.log('props', props)
-    return (
-      <View style={{ backgroundColor: 'yellow', padding: 15 }}>
-        <Text>Selected:</Text>
-        {props.selectedItems.map((singleSelectedItem) => {
-          const item = SectionedMultiSelect._findItem(singleSelectedItem)
-
-          if (!item || !item[props.displayKey]) return null
-
-          return (
-            <View
-              key={item[props.uniqueKey]}
-              style={{
-                flex: 0,
-                marginRight: 5,
-                padding: 10,
-                backgroundColor: 'orange'
-              }}
-            >
-              <TouchableOpacity
-                onPress={() => {
-                  SectionedMultiSelect._removeItem(item)
-                }}
-              >
-                <Text>{item[props.displayKey]}</Text>
-              </TouchableOpacity>
-            </View>
-          )
-        })}
-      </View>
-    )
+  const deleteCity=()=>{
+    return null
   }
-*/
 
+
+  const cityButtons=()=>{
+    const tmpButtons = []
+    for(let i=0; i<cityNames.length; i++){
+      tmpButtons.push(<Button title={cityNames[i]} onPress={deleteCity} key={i}/>)
+    }
+    setButtons(tmpButtons)
+  }
+
+  function getCityName(selectedCityItems){
+    if(selectedCityItems.length<0){
+      return null
+    }
+    for (let i = 0; i < activityCity.length; i++) {
+      for (let x=0; x<selectedCityItems.length ; x++){
+        if (selectedCityItems[x]===activityCity[i].id){
+          cityNames.push(activityCity[i].name)
+        }
+      }
+    }
+  }
+
+  function getCatName(selectedCatItems){
+    if(selectedCatItems.length<0){
+      return null
+    }
+    for (let i = 0; i < activityCategory.length; i++) {
+      for (let x=0; x<selectedCatItems.length ; x++){
+        if (selectedCatItems[x]===activityCategory[i].id){
+          categoryNames.push(activityCategory[i].name)
+        }
+      }
+    }
+  } */
+
+  const onSelectedCityItemsChange = selectedCityItems => {
+    setSelectedCityItems(selectedCityItems);
+    /* getCityName(selectedCityItems)
+    console.log("City Names: " + cityNames)
+    cityButtons() */
+  }
+  const onSelectedCatItemsChange = selectedCatItems => {
+    setSelectedCatItems(selectedCatItems);
+   /*  getCatName(selectedCatItems)
+    console.log("Category Names: " + categoryNames) */
+  }
+
+
+    const ref = useRef(null)
     return (
-      <View style={{alignItems:"center", flexDirection:"row"}}>
-        <View style={FILTER}>
-          <Text>{catItems[0].name}:</Text>
-        <SectionedMultiSelect
-          items={cityItems}
-          IconRenderer={MaterialIcons}
-          uniqueKey="id"
-          subKey="children"
-          displayKey="name"
-          selectText="Filtrele"
-          showDropDowns={true}
-          expandDropDowns={true}
-          readOnlyHeadings={true}
-          onSelectedItemsChange={onFilterCityChange}
-          selectedItems={selectedItems}
-          showCancelButton={true}
-          confirmText={"Tamam"}
-          searchPlaceholderText={"Şehir Ara"}
-          showChips={true}
-          alwaysShowSelectText={true}
-          showRemoveAll={true}
-          parentChipsRemoveChildren={true}
-          removeAllText={"Seçilenleri Kaldır"}
+      <View style={{flexDirection:"row", flex:1}}>
+        <View style={{flex:1}}>
+          <MultiSelect
+            hideTags
+            items={activityCity}
+            uniqueKey="id"
+            ref={ref}
+            onSelectedItemsChange={onSelectedCityItemsChange}
+            selectedItems={selectedCityItems}
+            selectText="Şehirler"
+            searchInputPlaceholderText="Şehir ara..."
+            onChangeInput={ (text)=> console.log(text)}
+            tagRemoveIconColor="#CCC"
+            tagBorderColor="#CCC"
+            tagTextColor="#CCC"
+            selectedItemTextColor="#CCC"
+            selectedItemIconColor="#CCC"
+            itemTextColor="#000"
+            displayKey="name"
+            searchInputStyle={{ color: '#CCC' }}
+            submitButtonColor="#CCC"
+            submitButtonText="Tamam"
+            styleMainWrapper={{width:170, height:200,marginRight:5, flex:1}}
+            styleItemsContainer={{height:200}}
+          />
+          {/* <View style={{flex:1, backgroundColor: color.palette.orangeDarker}}> */}
+          {/*   {MultiSelect.getSelectedItemsExt(selectedCityItems)} */}
+          {/* </View> */}
+        </View>
 
 
-        />
+        <View style={{flex:1}}>
+          <MultiSelect
+            hideTags
+            items={activityCategory}
+            uniqueKey="id"
+            ref={ref}
+            onSelectedItemsChange={onSelectedCatItemsChange}
+            selectedItems={selectedCatItems}
+            selectText="Kategoriler"
+            searchInputPlaceholderText="Kategori Ara..."
+            onChangeInput={ (text)=> console.log(text)}
+            tagRemoveIconColor="#CCC"
+            tagBorderColor="#CCC"
+            tagTextColor="#CCC"
+            selectedItemTextColor="#CCC"
+            selectedItemIconColor="#CCC"
+            itemTextColor="#000"
+            displayKey="name"
+            searchInputStyle={{ color: '#CCC' }}
+            submitButtonColor="#CCC"
+            submitButtonText="Tamam"
+            styleMainWrapper={{width:170, height:200, marginLeft:5, justifyContent:"flex-start"}}
+            styleItemsContainer={{height:200}}
+          />
+     {/*      <View>
+            <Text style={{color:"white"}}>
+              {getCatName(selectedCatItems)}
+            </Text>
+          </View> */}
+
         </View>
-        <View style={FILTER}>
-          <Text>{catItems[0].name}:</Text>
-        <SectionedMultiSelect
-          items={catItems}
-          IconRenderer={MaterialIcons}
-          uniqueKey="id"
-          subKey="children"
-          selectText="Filtrele"
-          showDropDowns={true}
-          expandDropDowns={true}
-          readOnlyHeadings={true}
-          onSelectedItemsChange={onFilterCatChange}
-          selectedItems={selectedItems}
-          showCancelButton={true}
-          confirmText={"Tamam"}
-          searchPlaceholderText={"Kategori Ara"}
-        />
-        </View>
+
+
       </View>
 
     );

@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react"
-import { View, ViewStyle, TextStyle, FlatList, Text } from "react-native"
+import { View, ViewStyle, TextStyle, FlatList, Text, ScrollView } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
 import { observer } from "mobx-react-lite"
 import {
@@ -38,8 +38,9 @@ const HEADER_TITLE: TextStyle = {
 }
 const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
+  flex:1
 }
-const VIEW_FILTER: ViewStyle = {
+/* const VIEW_FILTER: ViewStyle = {
   flexDirection:"row",
   margin:5,
 }
@@ -54,7 +55,7 @@ const FILTER_TEXT: TextStyle = {
   paddingLeft:5,
   flex:1,
   flexShrink: 1
-}
+} */
 
 
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
@@ -91,52 +92,6 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
         .then(()=>{__DEV__ && console.log("kategoriler çağırıldı.")})
     },[activityCategoryStore])
 
-    const onFiltersCityChange = (fCityItem) => {
-      const tmpCity = filtersCityItem
-      tmpCity.push(fCityItem[0])
-      // __DEV__ && console.log(filtersCityItem)
-      setFiltersCityItem(tmpCity);
-      fetchData().then()
-      // __DEV__ && console.log(getCityName(filtersCityItem))
-    };
-
-    const onFiltersCatChange = (fCatItem) => {
-      const tmpCat = filtersCatItem
-      tmpCat.push(fCatItem[0])
-      // __DEV__ && console.log(filtersCatItem)
-      setFiltersCatItem(tmpCat);
-      fetchData().then()
-      // __DEV__ && console.log(getCityName(filtersCityItem))
-    };
-
-
-    function getCityName(cityIds){
-      const tmpStr = []
-      for (let i = 0; i < activityCityStore.activityCities.length; i++) {
-        for (let x=0; x<cityIds.length ; x++){
-          if (cityIds[x]===activityCityStore.activityCities[i].id){
-            if(!tmpStr.includes(activityCityStore.activityCities[i].name)){
-              tmpStr.push(" " + activityCityStore.activityCities[i].name)
-            }
-          }
-        }
-      }
-      return tmpStr.toString()
-    }
-
-    function getCatName(catIds){
-      const tmpStr = []
-      for (let i = 0; i < activityCategoryStore.activityCategories.length; i++) {
-        for (let x=0; x<catIds.length ; x++){
-          if (catIds[x]===activityCategoryStore.activityCategories[i].id){
-            if(!tmpStr.includes(activityCategoryStore.activityCategories[i].name)) {
-              tmpStr.push(" " + activityCategoryStore.activityCategories[i].name)
-            }
-          }
-        }
-      }
-      return tmpStr.toString()
-    }
 
 
     return (
@@ -145,32 +100,28 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
         <Screen style={CONTAINER} backgroundColor={color.transparent}>
           <Header headerTx="welcomeScreen.activity" leftIcon={"bars"}
                   style={HEADER} titleStyle={HEADER_TITLE} />
-          <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
-            <Filters activityCity={activityCityStore.activityCities} activityCategory={activityCategoryStore.activityCategories} onFilterCityChange={onFiltersCityChange} onFilterCatChange={onFiltersCatChange} />
-            {filtersCityItem.length<1 && filtersCatItem.length<1
-              ?
-              null
-              :
-              <View style={VIEW_FILTER}>
-                <Text style={FILTER_TEXT}>{getCityName(filtersCityItem)}</Text>
-                <Text style={FILTER_TEXT}>{getCatName(filtersCatItem)}</Text>
-              </View>
-            }
-            <FlatList
-              contentContainerStyle={FLAT_LIST}
-              data={[...activities]}
-              keyExtractor={(item) => String(item.id)}
-              renderItem={({ item }) => (
-                <Card id={item.id} onPressDetail={nextScreen2}
-                      activityName={item.name}
-                      date={item.start}
-                      category={item.category}
-                      format={item.format}
-                      venue={item.venue}
-                      poster={item.poster_url}
-                />
-              )}
-            />
+          <View style={{flex:1}}>
+            <Filters activityCity={activityCityStore.activityCities} activityCategory={activityCategoryStore.activityCategories} />
+            <ScrollView style={{flex:1, }}>
+              <FlatList
+                contentContainerStyle={FLAT_LIST}
+                data={[...activities]}
+                keyExtractor={(item) => String(item.id)}
+                renderItem={({ item }) => (
+                  <Card id={item.id} onPressDetail={nextScreen2}
+                        activityName={item.name}
+                        date={item.start}
+                        category={item.category}
+                        format={item.format}
+                        venue={item.venue}
+                        poster={item.poster_url}
+                  />
+                )}
+              />
+            </ScrollView>
+
+
+
           </View>
 
         </Screen>

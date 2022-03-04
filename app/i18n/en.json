@@ -43,7 +43,7 @@
     "related": "İlgi Alanı",
     "type": "Tür",
     "is_free": "Ücretli/Ücretsiz",
-    "filter": "Filtrele"
+    "filter": "Filtrele",
   },
   "errorScreen": {
     "title": "Something went wrong!",

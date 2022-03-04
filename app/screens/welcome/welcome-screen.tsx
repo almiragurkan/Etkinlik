@@ -44,7 +44,9 @@ const FLAT_LIST: ViewStyle = {
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
   ({ navigation }) => {
     const nextScreen2 = (activityId) => {
-      navigation.navigate("activityDetail", { activityId: activityId })
+      navigation.navigate("activityDetail", { activityId: activityId})
+      activityStore.setDetailFalse()
+      console.log("is detail "+activityStore.isDetail + " welcome screen")
     }
 
     const [filtersCityItem, setFiltersCityItem] = useState([])
@@ -68,17 +70,21 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
     const { activityCategoryStore } = useStores()
 
     useEffect(() => {
-      activityCityStore.getActivitiesCities()
-        .then(() => {
-          __DEV__ && console.log("şehirler çağırıldı.")
-        })
+      if(activityCityStore.activityCities===null){
+        activityCityStore.getActivitiesCities()
+          .then(() => {
+            __DEV__ && console.log("şehirler çağırıldı.")
+          })
+      }
     }, [activityCityStore.activityCities])
 
     useEffect(() => {
-      activityCategoryStore.getActivitiesCategories()
-        .then(() => {
-          __DEV__ && console.log("kategoriler çağırıldı.")
-        })
+      if(activityCategoryStore.activityCategories===null) {
+        activityCategoryStore.getActivitiesCategories()
+          .then(() => {
+            __DEV__ && console.log("kategoriler çağırıldı.")
+          })
+      }
     }, [activityCategoryStore])
 
     const filterCityFunction=(city)=>{

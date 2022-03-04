@@ -8,6 +8,7 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import {
   WelcomeScreen,
   DemoScreen,
@@ -18,6 +19,9 @@ import {
   FiltersScreen,
 } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
+import { Filters } from "../components"
+import { useStores } from "../models"
+
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -44,7 +48,7 @@ export type NavigatorParamList = {
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
 const Stack = createNativeStackNavigator<NavigatorParamList>()
-
+const Drawer = createDrawerNavigator();
 const AppStack = () => {
   return (
     <Stack.Navigator
@@ -63,19 +67,38 @@ const AppStack = () => {
     </Stack.Navigator>
   )
 }
+const AppDrawer = () => {
+  return (
+    <Drawer.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      initialRouteName="welcome"
+      drawerContent={props => <Filters/>}
+    >
+      <Drawer.Screen name="welcome" component={WelcomeScreen} />
+      <Drawer.Screen name="filter" component={Filters} />
+      <Stack.Screen name="activityDetail" component={ActivityDetailScreen} />
+    </Drawer.Navigator>
+  )
+}
+
 
 interface NavigationProps extends Partial<React.ComponentProps<typeof NavigationContainer>> {}
 
 export const AppNavigator = (props: NavigationProps) => {
   const colorScheme = useColorScheme()
+  const {activityStore} = useStores()
   useBackButtonHandler(canExit)
+  console.log(activityStore.isDetail)
   return (
     <NavigationContainer
       ref={navigationRef}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
       {...props}
     >
-      <AppStack />
+
+      {activityStore.isDetail ? <AppStack /> : <AppDrawer /> }
     </NavigationContainer>
   )
 }

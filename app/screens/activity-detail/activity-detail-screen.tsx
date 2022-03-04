@@ -34,10 +34,14 @@ const HEADER_TITLE: TextStyle = {
 
 export const ActivityDetailScreen:FC<StackScreenProps<NavigatorParamList, "activityDetail">> = observer(
   ({ route, navigation }) => {
-  const goBack = () => navigation.goBack()
+
 
     const [activityDetail,setActivityDetail] = useState(null)
     const { activityStore } = useStores()
+    const goBack = () => {
+      activityStore.setDetailTrue()
+      console.log("is detail " + activityStore.isDetail + " activity detail screen")
+      navigation.goBack()}
 
     useEffect(()=>{
       if(route.params.activityId)

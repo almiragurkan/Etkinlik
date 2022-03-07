@@ -21,6 +21,7 @@ import {
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 import { Filters } from "../components"
 import { useStores } from "../models"
+import { color } from "../theme"
 
 
 /**
@@ -71,7 +72,10 @@ const AppDrawer = () => {
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
+        headerTitle: "ETKİNLİKLER",
+        headerStyle:{backgroundColor:color.palette.lighterGrey},
+        headerTitleAlign:"center"
       }}
       initialRouteName="welcome"
       drawerContent={props => <Filters/>}

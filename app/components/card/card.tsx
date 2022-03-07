@@ -3,6 +3,7 @@ import { ImageStyle, StyleProp, Text, TextStyle, TouchableOpacity, View, ViewSty
 import { AutoImage as Image } from "../../components"
 import { observer } from "mobx-react-lite"
 import moment from "moment"
+import { color } from "../../theme"
 /* import { IconTypes } from "../../components/icon/icons/index" */
 
 
@@ -14,7 +15,7 @@ const CARD: ViewStyle ={
   flex:1,
   backgroundColor: 'white',
   borderWidth: 3,
-  borderColor: 'lightgrey',
+  borderColor: color.palette.orangeDarker,
   borderRadius: 10,
   flexDirection: "column",
   alignItems:"center",

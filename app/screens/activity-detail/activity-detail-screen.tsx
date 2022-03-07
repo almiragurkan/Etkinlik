@@ -34,7 +34,7 @@ const HEADER_TITLE: TextStyle = {
 
 export const ActivityDetailScreen:FC<StackScreenProps<NavigatorParamList, "activityDetail">> = observer(
   ({ route, navigation }) => {
-
+    __DEV__&& console.log(navigation.getState())
 
     const [activityDetail,setActivityDetail] = useState(null)
     const { activityStore } = useStores()

@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react"
-import { View, ViewStyle, TextStyle, FlatList } from "react-native"
+import { ActivityIndicator, View, ViewStyle, TextStyle, FlatList } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
 import { observer } from "mobx-react-lite"
 import {
@@ -18,7 +18,7 @@ const CONTAINER: ViewStyle = {
   backgroundColor: color.transparent,
   paddingHorizontal: spacing[4],
 }
-const TEXT: TextStyle = {
+/* const TEXT: TextStyle = {
   color: color.palette.white,
   fontFamily: typography.primary,
 }
@@ -35,9 +35,10 @@ const HEADER_TITLE: TextStyle = {
   lineHeight: 15,
   textAlign: "center",
   letterSpacing: 1.5,
-}
+} */
 const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
+  paddingVertical: spacing[4]
 }
 
 
@@ -95,25 +96,27 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
       setFiltersCatItem(category)
     }
 
+/*
     const[isFilters,setFilters]=useState(false)
     const onFilter = () => {
       isFilters ? setFilters(false) : setFilters(true)
     }
+*/
 
 
     return (
       <View testID="WelcomeScreen" style={FULL}>
-        <GradientBackground colors={["#422443", "#281b34"]} />
-        <Screen style={CONTAINER} backgroundColor={color.transparent}>
-          <Header headerTx="welcomeScreen.activity" leftIcon={"bars2"}
-                  style={HEADER} titleStyle={HEADER_TITLE} onLeftPress={onFilter} />
+        <Screen style={CONTAINER} backgroundColor={color.palette.lighterGrey}>
+          {/* <Header headerTx="welcomeScreen.activity" leftIcon={"bars2"}
+                  style={HEADER} titleStyle={HEADER_TITLE} onLeftPress={onFilter} /> */}
           <View style={{ flex: 1 }}>
-            {
+            <ActivityIndicator size="small" color="darkgrey" />
+            {/* {
               isFilters ?
                 <Filters activityCity={activityCityStore.activityCities}
                          activityCategory={activityCategoryStore.activityCategories} onFilterCityChange={filterCityFunction} onFilterCatChange={filterCategoryFunction} />
                 :
-                <View style={{ flex: 1 }}>
+                <View style={{ flex: 1 }}> */}
                     <FlatList
                       contentContainerStyle={FLAT_LIST}
                       data={[...activities]}
@@ -129,8 +132,8 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
                           />
                       )}
                     />
-                </View>
-            }
+                {/* </View>
+            } */}
           </View>
         </Screen>
       </View>

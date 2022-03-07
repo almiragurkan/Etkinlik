@@ -18,7 +18,7 @@ const CONTAINER: ViewStyle = {
   backgroundColor: color.transparent,
   paddingHorizontal: spacing[4],
 }
-/* const TEXT: TextStyle = {
+const TEXT: TextStyle = {
   color: color.palette.white,
   fontFamily: typography.primary,
 }
@@ -35,7 +35,7 @@ const HEADER_TITLE: TextStyle = {
   lineHeight: 15,
   textAlign: "center",
   letterSpacing: 1.5,
-} */
+}
 const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
   paddingVertical: spacing[4]
@@ -46,8 +46,7 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
   ({ navigation }) => {
     const nextScreen2 = (activityId) => {
       navigation.navigate("activityDetail", { activityId: activityId})
-      activityStore.setDetailFalse()
-      console.log("is detail "+activityStore.isDetail + " welcome screen")
+
     }
 
     const [filtersCityItem, setFiltersCityItem] = useState([])
@@ -66,28 +65,6 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
       })
     }, [filtersCityItem, filtersCatItem, activityStore])
 
-
-    const { activityCityStore } = useStores()
-    const { activityCategoryStore } = useStores()
-
-    useEffect(() => {
-      if(activityCityStore.activityCities===null){
-        activityCityStore.getActivitiesCities()
-          .then(() => {
-            __DEV__ && console.log("şehirler çağırıldı.")
-          })
-      }
-    }, [activityCityStore.activityCities])
-
-    useEffect(() => {
-      if(activityCategoryStore.activityCategories===null) {
-        activityCategoryStore.getActivitiesCategories()
-          .then(() => {
-            __DEV__ && console.log("kategoriler çağırıldı.")
-          })
-      }
-    }, [activityCategoryStore])
-
     const filterCityFunction=(city)=>{
       setFiltersCityItem(city)
       console.log(filtersCityItem)
@@ -96,21 +73,17 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
       setFiltersCatItem(category)
     }
 
-/*
-    const[isFilters,setFilters]=useState(false)
-    const onFilter = () => {
-      isFilters ? setFilters(false) : setFilters(true)
+    const openMenu = () => {
+      navigation.openDrawer()
     }
-*/
-
 
     return (
       <View testID="WelcomeScreen" style={FULL}>
         <Screen style={CONTAINER} backgroundColor={color.palette.lighterGrey}>
-          {/* <Header headerTx="welcomeScreen.activity" leftIcon={"bars2"}
-                  style={HEADER} titleStyle={HEADER_TITLE} onLeftPress={onFilter} /> */}
+          <Header headerTx="welcomeScreen.activity" leftIcon={"bars2"}
+                  style={HEADER} titleStyle={HEADER_TITLE} onLeftPress={openMenu} />
           <View style={{ flex: 1 }}>
-            <ActivityIndicator size="small" color="darkgrey" />
+            {/* <ActivityIndicator size="small" color="darkgrey" /> */}
             {/* {
               isFilters ?
                 <Filters activityCity={activityCityStore.activityCities}

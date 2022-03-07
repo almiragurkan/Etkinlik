@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { StyleProp, Text, TextStyle, View, ViewStyle } from "react-native"
 import { observer } from "mobx-react-lite"
 import MultiSelect from "react-native-multiple-select"
@@ -6,6 +6,7 @@ import { Header } from "../header/header"
 import { color, spacing, typography } from "../../theme"
 import { goBack } from "../../navigators"
 import { Button } from "../../components/button/button"
+import { useStores } from "../../models"
 
 const TEXT: TextStyle = {
   color: color.palette.white,
@@ -28,7 +29,7 @@ const HEADER_TITLE: TextStyle = {
 const CONTINUE: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
-  backgroundColor: color.palette.black,
+  backgroundColor: color.palette.orangeDarker,
   justifyContent:"flex-end",
 }
 const CONTINUE_TEXT: TextStyle = {
@@ -44,27 +45,50 @@ const CONTENT: ViewStyle = {
 
 export interface FilterProps {
   style?: StyleProp<ViewStyle>
-  onPressDetail?: any
-  activityCity?: any
-  activityCategory?: any
-  onFilterCityChange?: any
-  onFilterCatChange?: any
+
 }
 
-export const Filters = observer(function Detail(props: FilterProps) {
-  const { activityCity, activityCategory, onFilterCityChange, onFilterCatChange } = props
+export const Filters = observer(function Filter(props: FilterProps) {
   const [selectedCityItems, setSelectedCityItems] = useState([])
   const [selectedCatItems, setSelectedCatItems] = useState([])
 
+  const { activityStore } = useStores()
+
   const onSelectedCityItemsChange = selectedCityItems => {
     setSelectedCityItems(selectedCityItems)
-    onFilterCityChange(selectedCityItems)
+    console.log(selectedCityItems)
+    // onFilterCityChange(selectedCityItems)
   }
   const onSelectedCatItemsChange = selectedCatItems => {
     setSelectedCatItems(selectedCatItems)
-    onFilterCatChange(selectedCatItems)
+    // onFilterCatChange(selectedCatItems)
   }
 
+  const { activityCityStore } = useStores()
+  const { activityCategoryStore } = useStores()
+
+  useEffect(() => {
+    if(activityCityStore.activityCities===null){
+      activityCityStore.getActivitiesCities()
+        .then(() => {
+          __DEV__ && console.log("şehirler çağırıldı.")
+        })
+    }
+  }, [activityCityStore.activityCities])
+
+  useEffect(() => {
+    if(activityCategoryStore.activityCategories===null) {
+      activityCategoryStore.getActivitiesCategories()
+        .then(() => {
+          __DEV__ && console.log("kategoriler çağırıldı.")
+        })
+    }
+  }, [activityCategoryStore])
+
+  const getActivitiesFunc = () => {
+    activityStore.getActivities(selectedCityItems,selectedCatItems)
+    goBack()
+  }
 
   const refCity = useRef<MultiSelect>(null)
   const refCat = useRef<MultiSelect>(null)
@@ -75,7 +99,7 @@ export const Filters = observer(function Detail(props: FilterProps) {
       <View>
         <MultiSelect
           hideTags
-          items={activityCity===undefined ? [] : activityCity}
+          items={activityCityStore.activityCities===undefined ? [] : activityCityStore.activityCities}
           uniqueKey="id"
           ref={refCity}
           onSelectedItemsChange={onSelectedCityItemsChange}
@@ -84,9 +108,10 @@ export const Filters = observer(function Detail(props: FilterProps) {
           searchInputPlaceholderText="Şehir ara..."
           noItemsText="Şehir bulunamadı"
           onChangeInput={(text) => console.log(text)}
-          tagRemoveIconColor="#CCC"
-          tagBorderColor="#CCC"
-          tagTextColor="#CCC"
+          tagRemoveIconColor="orange"
+          tagBorderColor="orange"
+          tagTextColor="grey"
+          tagContainerStyle={{backgroundColor: "white", margin:5}}
           selectedItemTextColor="#CCC"
           selectedItemIconColor="#CCC"
           itemTextColor="#000"
@@ -98,6 +123,7 @@ export const Filters = observer(function Detail(props: FilterProps) {
           styleItemsContainer={{ height: 200 }}
           styleTextDropdown={{ paddingLeft: 10 }}
           styleTextDropdownSelected={{ paddingLeft: 10 }}
+
         />
         <View>
           {refCity.current===null ?
@@ -114,7 +140,7 @@ export const Filters = observer(function Detail(props: FilterProps) {
       <View>
         <MultiSelect
           hideTags
-          items={activityCategory===undefined ? [] : activityCategory}
+          items={activityCategoryStore.activityCategories===undefined ? [] : activityCategoryStore.activityCategories}
           uniqueKey="id"
           ref={refCat}
           onSelectedItemsChange={onSelectedCatItemsChange}
@@ -123,9 +149,10 @@ export const Filters = observer(function Detail(props: FilterProps) {
           searchInputPlaceholderText="Kategori Ara..."
           noItemsText="Kategori bulunamadı"
           onChangeInput={(text) => console.log(text)}
-          tagRemoveIconColor="#CCC"
-          tagBorderColor="#CCC"
-          tagTextColor="#CCC"
+          tagRemoveIconColor="orange"
+          tagBorderColor="orange"
+          tagTextColor="grey"
+          tagContainerStyle={{backgroundColor: "white"}}
           selectedItemTextColor="#CCC"
           selectedItemIconColor="#CCC"
           itemTextColor="#000"
@@ -133,7 +160,7 @@ export const Filters = observer(function Detail(props: FilterProps) {
           searchInputStyle={{ color: "#CCC" }}
           submitButtonColor="#CCC"
           submitButtonText="Tamam"
-          styleMainWrapper={{ width: 260, marginLeft: 5 }}
+          styleMainWrapper={{ width: 260, marginLeft: 5, marginTop:10 }}
           styleItemsContainer={{ height: 200 }}
           styleTextDropdown={{ paddingLeft: 10 }}
           styleTextDropdownSelected={{ paddingLeft: 10 }}
@@ -155,7 +182,7 @@ export const Filters = observer(function Detail(props: FilterProps) {
             style={CONTINUE}
             textStyle={CONTINUE_TEXT}
             tx="filters.filter"
-            onPress={goBack}
+            onPress={getActivitiesFunc}
           />
         </View>
     </View>

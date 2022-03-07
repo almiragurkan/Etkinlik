@@ -8,7 +8,6 @@ export const ActivityStoreModel = types
   .model("ActivityStore")
   .props({
     activities: types.optional(types.array(ActivityModel), []),
-    isDetail: types.optional(types.boolean, false)
   })
   .extend(withEnvironment)
   .actions((self) => ({
@@ -24,7 +23,6 @@ export const ActivityStoreModel = types
 
         if (result.kind === "ok") {
           self.saveActivities(result.activities)
-          self.isDetail=false
           // __DEV__ && console.log(result.kind)
         } else {
           __DEV__ && console.log(result.kind)
@@ -48,16 +46,7 @@ export const ActivityStoreModel = types
       return null
     })
   }))
-  .actions((self) => ({
-    setDetailFalse: flow(function* () {
-      self.isDetail = false
-    })
-  }))
-  .actions((self) => ({
-    setDetailTrue: flow(function* () {
-      self.isDetail = true
-    })
-  }))
+
 
 type ActivityStoreType = Instance<typeof ActivityStoreModel>
 export interface ActivityStore extends ActivityStoreType {}

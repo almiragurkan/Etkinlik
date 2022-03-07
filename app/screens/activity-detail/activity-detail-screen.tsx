@@ -39,8 +39,6 @@ export const ActivityDetailScreen:FC<StackScreenProps<NavigatorParamList, "activ
     const [activityDetail,setActivityDetail] = useState(null)
     const { activityStore } = useStores()
     const goBack = () => {
-      activityStore.setDetailTrue()
-      console.log("is detail " + activityStore.isDetail + " activity detail screen")
       navigation.goBack()}
 
     useEffect(()=>{

@@ -30,7 +30,7 @@ const CONTINUE: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
   backgroundColor: color.palette.orangeDarker,
-  justifyContent:"flex-end",
+
 }
 const CONTINUE_TEXT: TextStyle = {
   ...TEXT,
@@ -41,6 +41,9 @@ const CONTINUE_TEXT: TextStyle = {
 const CONTENT: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
+  flex: 0.06,
+  justifyContent:"flex-end",
+  backgroundColor:color.palette.lighterGrey
 }
 
 export interface FilterProps {
@@ -56,12 +59,9 @@ export const Filters = observer(function Filter(props: FilterProps) {
 
   const onSelectedCityItemsChange = selectedCityItems => {
     setSelectedCityItems(selectedCityItems)
-    console.log(selectedCityItems)
-    // onFilterCityChange(selectedCityItems)
   }
   const onSelectedCatItemsChange = selectedCatItems => {
     setSelectedCatItems(selectedCatItems)
-    // onFilterCatChange(selectedCatItems)
   }
 
   const { activityCityStore } = useStores()
@@ -93,10 +93,11 @@ export const Filters = observer(function Filter(props: FilterProps) {
   const refCity = useRef<MultiSelect>(null)
   const refCat = useRef<MultiSelect>(null)
   return (
-    <View style={{ flexDirection: "column", flex: 1, backgroundColor:"lightgrey", padding:5 }}>
+    <View style={{ flexDirection: "column", flex: 1, backgroundColor:color.palette.lighterGrey, padding:5 }}>
       <Header headerTx="filters.title"
               style={HEADER} titleStyle={HEADER_TITLE} />
-      <View>
+      <View style={{flex:1 }} >
+      <View style={{flex:1, backgroundColor:color.palette.lighterGrey}}>
         <MultiSelect
           hideTags
           items={activityCityStore.activityCities===undefined ? [] : activityCityStore.activityCities}
@@ -123,7 +124,6 @@ export const Filters = observer(function Filter(props: FilterProps) {
           styleItemsContainer={{ height: 200 }}
           styleTextDropdown={{ paddingLeft: 10 }}
           styleTextDropdownSelected={{ paddingLeft: 10 }}
-
         />
         <View>
           {refCity.current===null ?
@@ -137,7 +137,7 @@ export const Filters = observer(function Filter(props: FilterProps) {
           }
         </View>
       </View>
-      <View>
+      <View style={{flex:1, backgroundColor:color.palette.lighterGrey}}>
         <MultiSelect
           hideTags
           items={activityCategoryStore.activityCategories===undefined ? [] : activityCategoryStore.activityCategories}
@@ -175,6 +175,7 @@ export const Filters = observer(function Filter(props: FilterProps) {
             </View>
           }
         </View>
+      </View>
       </View>
         <View style={CONTENT}>
           <Button
